@@ -66,7 +66,7 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
 .top.solid { background: rgba(10, 15, 20, .84); border-color: var(--line); backdrop-filter: blur(14px); }
 .brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; white-space: nowrap; }
 .brand-word { font: 800 25px/1 var(--f-stencil); letter-spacing: .03em; }
-.brand-sub { font: 500 9.5px/1 var(--f-mono); letter-spacing: .16em; color: var(--steel); }
+.brand-sub { color: var(--steel); }
 .nav { display: flex; gap: 28px; margin-left: auto; }
 .nav a { font: 500 11.5px/1 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; text-decoration: none; color: var(--steel); transition: color .2s; }
 .nav a:hover { color: var(--fog); }
@@ -255,7 +255,7 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
   .reg-row { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 420px) {
-  .brand-sub { display: none; }
+  .top .brand-sub { display: block; margin: 4px -.44em 0 0; font-size: 12px; letter-spacing: .44em; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -268,7 +268,7 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
 <a class="skip" href="#main" data-i18n="skip">Přeskočit na obsah</a>
 
 <header class="top">
-  <a class="brand" href="#top" aria-label="Casa Buena Automotive"><span class="brand-word">CASA BUENA</span><span class="brand-sub">AUTOMOTIVE</span></a>
+  <a class="brand" href="#top" aria-label="Casa Buena Automotive"><span class="brand-word">CASA BUENA <span class="brand-sub">AUTOMOTIVE</span></span></a>
   <nav class="nav" aria-label="Hlavní">
     <a href="#cesta" data-i18n="nav.route">Cesta vozu</a>
     <a href="#postup" data-i18n="nav.steps">Jak dovážíme</a>
@@ -548,7 +548,7 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
 <footer class="foot">
   <div class="foot-in">
     <div>
-      <span class="brand-word">CASA BUENA</span>
+      <span class="brand-word">CASA BUENA <span class="brand-sub">AUTOMOTIVE</span></span>
       <p>© 2026 Casa Buena s.r.o. · IČO 23325151</p>
     </div>
     <p data-i18n="ft">Videa: <a href="https://mixkit.co/free-stock-video/large-container-area-working-at-night-36318/">Mixkit</a>, <a href="https://mixkit.co/free-stock-video/large-cargo-ship-leaving-for-the-ocean-35866/">Mixkit</a>, <a href="https://mixkit.co/free-stock-video/cargo-truck-driving-on-the-highway-28787/">Mixkit</a> (Mixkit Free License). Fotografie z&nbsp;Wikimedia Commons: Voyah Taishan od <a href="https://commons.wikimedia.org/wiki/File:Voyah_Taishan_MY2026_IMG01.jpg">Poprace</a> a&nbsp;<a href="https://commons.wikimedia.org/wiki/File:Voyah_Taishan_001.jpg">JustAnotherCarDesigner</a> (CC0); Bremerhaven od Bundesanstalt für Wasserbau (<a href="https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592739647).jpg">1</a>, <a href="https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592444761).jpg">2</a>; <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, oříznuto) a&nbsp;<a href="https://commons.wikimedia.org/wiki/File:CT3_bremerhaven_hg.jpg">Hannes Grobe</a> (<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>). Mapa: <a href="https://www.naturalearthdata.com/">Natural Earth</a>.</p>
