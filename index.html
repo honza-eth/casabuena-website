@@ -47,7 +47,6 @@ section[id] { scroll-margin-top: 64px; }
 /* Not tighter: Czech accents on caps reach .98em (measured), so a smaller line-height makes them hit the line above. */
 h1, h2, h3 { margin: 0; font-family: var(--f-head); font-weight: 900; text-transform: uppercase; line-height: 1.02; letter-spacing: .004em; }
 h2 { font-size: clamp(46px, 8vw, 132px); }
-.eyebrow { margin: 0 0 20px; font: 500 12px/1.4 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--sodium); }
 .lede { margin: 0; max-width: 34em; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.5; color: var(--mist); }
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--g); }
 .sec-head { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px 64px; align-items: end; }
@@ -74,7 +73,7 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
 .lang:hover { border-color: var(--fog); }
 
 /* Hero */
-.hero { position: relative; display: grid; grid-template-rows: 1fr auto; min-height: 100vh; min-height: 100svh; overflow: hidden; isolation: isolate; }
+.hero { position: relative; display: grid; grid-template-rows: 1fr; min-height: 100vh; min-height: 100svh; overflow: hidden; isolation: isolate; }
 .hero-media { position: absolute; inset: 0; z-index: -1; background: #070a0d; }
 .hero-media video { width: 100%; height: 100%; object-fit: cover; animation: drift 14s var(--ease) both; }
 .hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 15, 20, .7) 0%, rgba(10, 15, 20, .1) 30%, rgba(10, 15, 20, .45) 62%, var(--night) 100%), linear-gradient(90deg, rgba(10, 15, 20, .55), transparent 65%); }
@@ -86,16 +85,9 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
 .hero-row { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 48px; margin-top: clamp(22px, 3vw, 40px); animation: up .9s .35s var(--ease) both; }
 .hero-sub { margin: 0; max-width: 35em; font-size: clamp(16px, 1.3vw, 19px); color: var(--mist); }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; }
-.ticker { overflow: hidden; border-top: 1px solid var(--line); background: rgba(10, 15, 20, .5); backdrop-filter: blur(8px); }
-.ticker-track { display: flex; width: max-content; }
-.js:not(.rm) .ticker-track { animation: tick 70s linear infinite; }
-.ticker ul { display: flex; margin: 0; padding: 0; list-style: none; }
-.ticker li { display: flex; align-items: center; padding: 17px 0; font: 500 11px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--steel); white-space: nowrap; }
-.ticker li::before { content: ""; width: 6px; height: 6px; margin: 0 22px; background: var(--sodium); }
 @keyframes drift { from { transform: scale(1.14); } }
 @keyframes rise { from { transform: translateY(108%); } }
 @keyframes up { from { opacity: 0; transform: translateY(24px); } }
-@keyframes tick { to { transform: translateX(-50%); } }
 
 /* Journey: scroll-driven globe */
 .j-intro { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px 64px; align-items: end; padding-top: clamp(110px, 13vw, 190px); padding-bottom: 28px; }
@@ -109,7 +101,6 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
 .readout { display: flex; align-items: flex-end; gap: 32px; padding: 16px 0; margin-bottom: 8px; border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line); }
 .readout .lbl { display: block; margin-bottom: 9px; font: 500 10px/1 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--steel); }
 .readout .val { display: block; min-width: 2.2ch; font: 800 clamp(40px, 4.4vw, 66px)/.86 var(--f-head); font-variant-numeric: tabular-nums; }
-.readout .tag { margin-left: auto; padding: 6px 8px; border: 1px solid var(--line-2); font: 500 9.5px/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--steel); }
 .stages { margin: 0; padding: 0; list-style: none; counter-reset: st; }
 .stages li { position: relative; padding: 11px 0 11px 40px; border-bottom: 1px solid var(--line); color: var(--steel); transition: color .3s; }
 .stages li::before { counter-increment: st; content: counter(st, decimal-leading-zero); position: absolute; left: 0; top: 15px; font: 500 10px/1 var(--f-mono); letter-spacing: .06em; }
@@ -150,25 +141,10 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
 .step-num { position: relative; z-index: 1; display: grid; place-items: center; width: 56px; height: 56px; border: 1px solid var(--line-2); background: var(--night); font: 500 13px/1 var(--f-mono); color: var(--steel); transition: background .35s, border-color .35s, color .35s; }
 .step.lit .step-num { background: var(--sodium); border-color: var(--sodium); color: var(--night); }
 .step h3 { margin: 6px 0 18px; font-size: clamp(36px, 4.6vw, 68px); }
-.step-body p { margin: 0 0 20px; max-width: 32em; color: var(--mist); }
-.doc { display: inline-flex; flex-wrap: wrap; gap: 4px 14px; padding: 11px 14px; border: 1px dashed var(--line-2); font: 500 11.5px/1.45 var(--f-mono); color: var(--fog); }
-.step-body .doc { margin: 0; }
-.doc span:first-child { color: var(--sodium); text-transform: uppercase; letter-spacing: .08em; }
-.step-side { position: relative; align-self: start; padding-top: 6px; }
+.step-body p { margin: 0; max-width: 32em; color: var(--mist); }
+.step-side { align-self: start; padding-top: 6px; }
 .step-media { margin: 0; aspect-ratio: 4 / 3; overflow: hidden; background: var(--hull); }
 .step-media img, .step-media video { width: 100%; height: 100%; object-fit: cover; }
-.stamp {
-  display: inline-block; padding: 11px 16px 9px; border: 3px solid currentColor; border-radius: 5px;
-  box-shadow: inset 0 0 0 2px var(--night), inset 0 0 0 4px currentColor;
-  color: var(--sodium); font: 800 clamp(24px, 2.5vw, 38px)/1 var(--f-stencil); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap;
-  opacity: .9; transform: rotate(-6deg);
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -3.2 2.75'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E") 0 0 / 180px;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -3.2 2.75'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E") 0 0 / 180px;
-  transition: opacity .2s ease-out, transform .5s cubic-bezier(.3, 1.6, .5, 1);
-}
-.step-media + .stamp { position: absolute; left: -14px; bottom: -22px; background: rgba(10, 15, 20, .86); }
-.step-side > .stamp:only-child { margin-top: 18px; }
-.js:not(.rm) .step:not(.lit) .stamp { opacity: 0; transform: rotate(-6deg) scale(1.9); }
 
 /* Car gallery: expanding cards */
 .cars { padding: clamp(80px, 10vw, 150px) 0; border-top: 1px solid var(--line); }
@@ -177,9 +153,6 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
 .card.on { flex-grow: 4.4; }
 .card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(.7) brightness(.55); transition: filter .6s, transform 1.2s var(--ease); }
 .card.on img { filter: none; transform: scale(1.03); }
-.card figcaption { position: absolute; left: 0; right: 0; bottom: 0; display: flex; gap: 12px; padding: 40px 18px 16px; background: linear-gradient(transparent, rgba(10, 15, 20, .85)); font: 500 11px/1.3 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
-.card figcaption span:first-child { color: var(--sodium); }
-.cars-note { margin: 16px auto 0; max-width: 1500px; padding: 0 var(--g); font: 400 11px/1.5 var(--f-mono); color: var(--steel); }
 
 /* Who it is for */
 .who { position: relative; padding: clamp(110px, 13vw, 190px) 0; overflow: hidden; isolation: isolate; }
@@ -188,7 +161,6 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
 .who-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, var(--night) 0%, rgba(10, 15, 20, .45) 30%, rgba(10, 15, 20, .6) 70%, var(--night) 100%); }
 .who-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: clamp(48px, 7vw, 88px); }
 .who-card { padding: clamp(24px, 3.2vw, 46px); border: 1px solid var(--line-2); background: rgba(14, 21, 28, .82); backdrop-filter: blur(10px); }
-.who-card .num { display: block; margin-bottom: 26px; font: 500 12px/1 var(--f-mono); color: var(--sodium); }
 .who-card h3 { margin-bottom: 18px; font-size: clamp(36px, 4vw, 58px); }
 .who-card p { margin: 0 0 26px; color: var(--mist); }
 .who-card ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
@@ -202,7 +174,6 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
 .reg-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
 .reg { margin: 0; border: 1px solid var(--line-2); background: var(--hull); }
 .reg-head { display: flex; justify-content: space-between; gap: 16px; padding: 14px 20px; border-bottom: 1px solid var(--line-2); font: 500 10.5px/1.3 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--steel); }
-.reg-head b { color: var(--sodium); font-weight: 500; }
 .reg-row { display: grid; grid-template-columns: 168px minmax(0, 1fr); gap: 4px 16px; padding: 14px 20px; border-bottom: 1px dashed var(--line); }
 .reg-row:last-child { border-bottom: 0; }
 .reg dt { padding-top: 2px; font: 500 10.5px/1.4 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--steel); }
@@ -218,7 +189,6 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
 .mail { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 28px; margin-top: clamp(40px, 5vw, 64px); }
 .mail-addr { font: 800 clamp(36px, 6.4vw, 104px)/1 var(--f-head); color: var(--sodium); -webkit-user-select: all; user-select: all; overflow-wrap: anywhere; }
 .mail-act { display: flex; flex-wrap: wrap; gap: 10px; }
-.contact-addr { margin: 40px 0 0; font: 500 11.5px/1.6 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--steel); }
 
 /* Footer */
 .foot { padding: 44px var(--g) 52px; border-top: 1px solid var(--line); font: 400 11px/1.7 var(--f-mono); color: var(--steel); }
@@ -246,7 +216,6 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
   .step-num { width: 44px; height: 44px; }
   .path::before, .path::after { left: 21px; }
   .step-side { grid-column: 2; padding-top: 28px; }
-  .step-media + .stamp { left: auto; right: 12px; bottom: -18px; }
   .deck { height: 64vh; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
   .card { flex: 0 0 84%; scroll-snap-align: center; }
   .card img { filter: none; }
@@ -286,7 +255,6 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
       <video src="assets/port-night.mp4" poster="assets/port-night.webp" autoplay muted loop playsinline data-lazy></video>
     </div>
     <div class="hero-inner">
-      <p class="eyebrow" data-i18n="h.eb">Dovoz aut z&nbsp;Číny · Ostrava</p>
       <h1 class="hero-title">
         <span class="ln"><span data-i18n="h1a">Auta z&nbsp;Číny.</span></span>
         <span class="ln"><span data-i18n="h1b">S&nbsp;českou SPZ.</span></span>
@@ -299,24 +267,11 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
         </div>
       </div>
     </div>
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <ul>
-          <li data-i18n="t1">Čína → Bremerhaven → Ostrava</li>
-          <li data-i18n="t2">Na moři cca 5–7 týdnů</li>
-          <li data-i18n="t3">Tranzit T1, clo až v Česku</li>
-          <li data-i18n="t4">Dovozce Casa Buena s.r.o.</li>
-          <li>EORI CZ23325151</li>
-          <li data-i18n="t6">Schválení · registrace · SPZ</li>
-        </ul>
-      </div>
-    </div>
   </section>
 
   <section id="cesta" aria-labelledby="cesta-h">
     <div class="wrap j-intro">
       <div>
-        <p class="eyebrow" data-i18n="j.eb">01 — Cesta vozu</p>
         <h2 id="cesta-h" data-i18n="j.h">Z&nbsp;Číny<br>do Ostravy.</h2>
       </div>
       <p class="lede" data-i18n="j.lede">Takhle může cesta vypadat: kolem Afriky přes 26&nbsp;tisíc kilometrů po moři do Bremerhavenu, pak po souši do Ostravy. Posuňte stránku a&nbsp;sledujte kontejner.</p>
@@ -330,7 +285,6 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
           <div class="readout">
             <div><span class="lbl" data-i18n="j.day">Den</span><span class="val" id="j-day">45</span></div>
             <div><span class="lbl">Km</span><span class="val" id="j-km">27 610</span></div>
-            <span class="tag" data-i18n="j.tag">Orientačně</span>
           </div>
           <ol class="stages">
             <li><b data-i18n="st0">Čína</b><span data-i18n="st0d">Vůz se v&nbsp;čínském přístavu naloží do kontejneru.</span></li>
@@ -338,7 +292,7 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
             <li><b data-i18n="st2">Indický oceán</b><span data-i18n="st2d">Nejdelší úsek: týdny na otevřeném moři.</span></li>
             <li><b data-i18n="st3">Mys Dobré naděje</b><span data-i18n="st3d">Trasu volí rejdař: kolem Afriky, nebo přes Suez.</span></li>
             <li><b data-i18n="st4">Atlantik</b><span data-i18n="st4d">Podél Afriky a&nbsp;Evropy na sever, Lamanšským průlivem do Severního moře.</span></li>
-            <li><b data-i18n="st5">Bremerhaven</b><span data-i18n="st5d">Vykládka. Kontejner jede dál po souši v&nbsp;tranzitu T1, clo se platí až v&nbsp;Česku.</span></li>
+            <li><b data-i18n="st5">Bremerhaven</b><span data-i18n="st5d">Vykládka. Kontejner jede dál po souši, clo se platí až v&nbsp;Česku.</span></li>
             <li><b data-i18n="st6">Ostrava</b><span data-i18n="st6d">Proclení, technické schválení a&nbsp;registrace. Pak předání.</span></li>
           </ol>
           <div class="segs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
@@ -363,10 +317,9 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <p class="eyebrow" data-i18n="s.eb">02 — Jak dovážíme</p>
           <h2 id="postup-h" data-i18n="s.h">Osm kroků<br>k&nbsp;české SPZ.</h2>
         </div>
-        <p class="lede" data-i18n="s.lede">Každý krok má svůj výstup. Víte, kde vůz je a&nbsp;co se s&nbsp;ním právě děje.</p>
+        <p class="lede" data-i18n="s.lede">Víte, kde vůz je a&nbsp;co se s&nbsp;ním právě děje.</p>
       </div>
       <ol class="path" data-scrub="line">
         <li class="step">
@@ -374,71 +327,57 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
           <div class="step-body">
             <h3 data-i18n="s1">Výběr vozu</h3>
             <p data-i18n="s1p">Napíšete, jaký vůz chcete: model, výbavu, barvu. Prověříme cenu, dostupnost a&nbsp;co bude potřeba ke schválení v&nbsp;Česku.</p>
-            <p class="doc"><span data-i18n="out">Výstup</span><span data-i18n="s1o">Nabídka s&nbsp;cenou a&nbsp;termínem</span></p>
           </div>
-          <div class="step-side"><span class="stamp" data-i18n="s1s">Objednáno</span></div>
         </li>
         <li class="step">
           <span class="step-num">02</span>
           <div class="step-body">
             <h3 data-i18n="s2">Nákup</h3>
             <p data-i18n="s2p">Vůz kupuje Casa Buena na svou firmu, takže dovozcem jsme my. Vy neřešíte zahraniční platbu ani celní papíry.</p>
-            <p class="doc"><span data-i18n="out">Výstup</span><span data-i18n="s2o">Kupní doklad</span></p>
           </div>
-          <div class="step-side"><span class="stamp" data-i18n="s2s">Zakoupeno</span></div>
         </li>
         <li class="step">
           <span class="step-num">03</span>
           <div class="step-body">
             <h3 data-i18n="s3">Kontejner a&nbsp;moře</h3>
             <p data-i18n="s3p">Vůz se v&nbsp;Číně naloží do kontejneru a&nbsp;loď ho poveze do Bremerhavenu. Na moři je zhruba 5 až 7 týdnů.</p>
-            <p class="doc"><span data-i18n="out">Výstup</span><span data-i18n="s3o">Konosament (B/L)</span></p>
           </div>
           <div class="step-side">
             <figure class="step-media"><img src="assets/bhv-cranes-night.webp" alt="Kontejnerový terminál v noci, jeřáby nad kontejnery" loading="lazy" width="1800" height="958"></figure>
-            <span class="stamp" data-i18n="s3s">Naloženo</span>
           </div>
         </li>
         <li class="step">
           <span class="step-num">04</span>
           <div class="step-body">
             <h3 data-i18n="s4">Bremerhaven → Česko</h3>
-            <p data-i18n="s4p">V&nbsp;Bremerhavenu se kontejner vyloží a&nbsp;pokračuje po souši v&nbsp;tranzitu T1. Clo a&nbsp;DPH se tak platí až v&nbsp;Česku.</p>
-            <p class="doc"><span data-i18n="out">Výstup</span><span data-i18n="s4o">Tranzitní doklad T1</span></p>
+            <p data-i18n="s4p">V&nbsp;Bremerhavenu se kontejner vyloží a&nbsp;pokračuje po souši. Clo a&nbsp;DPH se platí až v&nbsp;Česku.</p>
           </div>
           <div class="step-side">
             <figure class="step-media"><video src="assets/truck-road.mp4" poster="assets/truck-road.webp" muted loop playsinline preload="none" data-lazy aria-hidden="true"></video></figure>
-            <span class="stamp" data-i18n="s4s">V tranzitu</span>
           </div>
         </li>
         <li class="step">
           <span class="step-num">05</span>
           <div class="step-body">
             <h3 data-i18n="s5">Clo a&nbsp;DPH</h3>
-            <p data-i18n="s5p">Vůz proclíme v&nbsp;Česku. Zaplatíme clo i&nbsp;dovozní DPH a&nbsp;vůz je propuštěn do volného oběhu v&nbsp;EU.</p>
-            <p class="doc"><span data-i18n="out">Výstup</span><span data-i18n="s5o">Rozhodnutí o&nbsp;propuštění do volného oběhu</span></p>
+            <p data-i18n="s5p">Vůz proclíme v&nbsp;Česku. Zaplatíme clo i&nbsp;dovozní DPH a&nbsp;vůz je tím oficiálně dovezen do EU.</p>
           </div>
-          <div class="step-side"><span class="stamp" data-i18n="s5s">Procleno</span></div>
         </li>
         <li class="step">
           <span class="step-num">06</span>
           <div class="step-body">
             <h3 data-i18n="s6">Technické schválení</h3>
-            <p data-i18n="s6p">Doložíme technickou dokumentaci a&nbsp;vůz projde schválením technické způsobilosti jednotlivě dovezeného vozidla.</p>
-            <p class="doc"><span data-i18n="out">Výstup</span><span data-i18n="s6o">Technický průkaz</span></p>
+            <p data-i18n="s6p">Doložíme technickou dokumentaci a&nbsp;necháme vůz schválit pro provoz v&nbsp;Česku.</p>
           </div>
-          <div class="step-side"><span class="stamp" data-i18n="s6s">Schváleno</span></div>
         </li>
         <li class="step">
           <span class="step-num">07</span>
           <div class="step-body">
             <h3 data-i18n="s7">Čeština v&nbsp;autě</h3>
             <p data-i18n="s7p">Kde to model dovolí, přepneme systém do češtiny nebo angličtiny a&nbsp;nastavíme evropské aplikace.</p>
-            <p class="doc"><span data-i18n="out">Výstup</span><span data-i18n="s7o">Systém v&nbsp;češtině nebo angličtině</span></p>
           </div>
           <div class="step-side">
             <figure class="step-media"><img src="assets/voyah-interior.webp" alt="Interiér vozu Voyah Taishan s displeji" loading="lazy" width="1600" height="1200"></figure>
-            <span class="stamp" data-i18n="s7s">V češtině</span>
           </div>
         </li>
         <li class="step">
@@ -446,9 +385,7 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
           <div class="step-body">
             <h3 data-i18n="s8">Registrace a&nbsp;předání</h3>
             <p data-i18n="s8p">Vůz zaregistrujeme a&nbsp;dostane českou SPZ. Pak ho předáme vám. Prodejcům dodáváme vozy připravené k&nbsp;registraci.</p>
-            <p class="doc"><span data-i18n="out">Výstup</span><span data-i18n="s8o">Osvědčení o&nbsp;registraci a&nbsp;SPZ</span></p>
           </div>
-          <div class="step-side"><span class="stamp" data-i18n="s8s">Předáno</span></div>
         </li>
       </ol>
     </div>
@@ -457,28 +394,24 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
   <section class="cars" aria-labelledby="vozy-h">
     <div class="wrap sec-head">
       <div>
-        <p class="eyebrow" data-i18n="c.eb">03 — Například</p>
         <h2 id="vozy-h">Voyah Taishan.</h2>
       </div>
       <p class="lede" data-i18n="c.lede">Velké SUV značky Voyah z&nbsp;koncernu Dongfeng. Takový vůz pro vás koupíme v&nbsp;Číně a&nbsp;dovezeme až k&nbsp;registraci.</p>
     </div>
     <div class="deck">
-      <figure class="card on" tabindex="0"><img src="assets/voyah-front.webp" alt="Voyah Taishan zepředu v showroomu" loading="lazy" width="1800" height="1313"><figcaption><span>01</span><span data-i18n="c1">Zepředu</span></figcaption></figure>
-      <figure class="card" tabindex="0"><img src="assets/voyah-side.webp" alt="Voyah Taishan z boku na parkovišti" loading="lazy" width="1600" height="1200"><figcaption><span>02</span><span data-i18n="c2">Z boku</span></figcaption></figure>
-      <figure class="card" tabindex="0"><img src="assets/voyah-interior.webp" alt="Interiér vozu Voyah Taishan" loading="lazy" width="1600" height="1200"><figcaption><span>03</span><span data-i18n="c3">Interiér</span></figcaption></figure>
-      <figure class="card" tabindex="0"><img src="assets/voyah-showroom.webp" alt="Voyah Taishan v showroomu nákupního centra" loading="lazy" width="1600" height="1200"><figcaption><span>04</span><span data-i18n="c4">V showroomu</span></figcaption></figure>
+      <figure class="card on" tabindex="0"><img src="assets/voyah-front.webp" alt="Voyah Taishan zepředu v showroomu" loading="lazy" width="1800" height="1313"></figure>
+      <figure class="card" tabindex="0"><img src="assets/voyah-side.webp" alt="Voyah Taishan z boku na parkovišti" loading="lazy" width="1600" height="1200"></figure>
+      <figure class="card" tabindex="0"><img src="assets/voyah-interior.webp" alt="Interiér vozu Voyah Taishan" loading="lazy" width="1600" height="1200"></figure>
+      <figure class="card" tabindex="0"><img src="assets/voyah-showroom.webp" alt="Voyah Taishan v showroomu nákupního centra" loading="lazy" width="1600" height="1200"></figure>
     </div>
-    <p class="cars-note" data-i18n="c.note">Ilustrační fotografie z&nbsp;Wikimedia Commons.</p>
   </section>
 
   <section id="pro-koho" class="who" data-scrub="pass" aria-labelledby="who-h">
     <div class="who-bg" aria-hidden="true"><img src="assets/bhv-cars.webp" alt="" loading="lazy" width="1800" height="1250"></div>
     <div class="wrap">
-      <p class="eyebrow" data-i18n="w.eb">04 — Pro koho</p>
       <h2 id="who-h" data-i18n="w.h">Pro řidiče.<br>Pro prodejce.</h2>
       <div class="who-grid">
         <article class="who-card">
-          <span class="num">01</span>
           <h3 data-i18n="w1">Řidiči a&nbsp;firmy</h3>
           <p data-i18n="w1p">Chcete konkrétní čínské auto, které tu nikdo nenabízí. Pošlete model a&nbsp;výbavu, my vrátíme nabídku s&nbsp;cenou a&nbsp;termínem. Převezmete vůz s&nbsp;českou SPZ.</p>
           <ul>
@@ -488,7 +421,6 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
           </ul>
         </article>
         <article class="who-card">
-          <span class="num">02</span>
           <h3 data-i18n="w2">Prodejci</h3>
           <p data-i18n="w2p">Rozšiřte nabídku o&nbsp;čínské modely bez vlastního dovozu. Dodáme vozy proclené a&nbsp;technicky schválené, připravené k&nbsp;registraci a&nbsp;prodeji.</p>
           <ul>
@@ -504,7 +436,6 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
   <section id="firma" class="firm" aria-labelledby="firma-h">
     <div class="wrap firm-grid">
       <div>
-        <p class="eyebrow" data-i18n="f.eb">05 — Firma</p>
         <h2 id="firma-h" data-i18n="f.h">Česká firma<br>z&nbsp;Ostravy.</h2>
         <p class="lede" data-i18n="f.lede">Auta dovážíme na vlastní firmu, takže clo, DPH i&nbsp;papíry jdou přes nás. Všechny údaje si ověříte ve veřejných rejstřících.</p>
         <div class="reg-links">
@@ -513,11 +444,10 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
         </div>
       </div>
       <dl class="reg">
-        <div class="reg-head"><span data-i18n="r.head">Údaje o&nbsp;firmě</span><b>IČO 23325151</b></div>
+        <div class="reg-head"><span data-i18n="r.head">Údaje o&nbsp;firmě</span></div>
         <div class="reg-row"><dt data-i18n="r.name">Obchodní firma</dt><dd>Casa Buena s.r.o.</dd></div>
         <div class="reg-row"><dt data-i18n="r.ico">IČO</dt><dd>23325151</dd></div>
         <div class="reg-row"><dt data-i18n="r.dic">DIČ</dt><dd data-i18n="r.dicv">CZ23325151, plátce DPH</dd></div>
-        <div class="reg-row"><dt>EORI</dt><dd>CZ23325151</dd></div>
         <div class="reg-row"><dt data-i18n="r.seat">Sídlo</dt><dd>Partyzánské náměstí 1738/3, 702&nbsp;00 Ostrava</dd></div>
         <div class="reg-row"><dt data-i18n="r.zap">Zápis</dt><dd data-i18n="r.zapv">Krajský soud v&nbsp;Ostravě, oddíl C, vložka 99494</dd></div>
         <div class="reg-row"><dt data-i18n="r.jed">Jednatel</dt><dd>Jan Struhala</dd></div>
@@ -529,7 +459,6 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
   <section id="kontakt" class="contact" aria-labelledby="kontakt-h">
     <div class="contact-bg" aria-hidden="true"><img src="assets/bhv-ship.webp" alt="" loading="lazy" width="1800" height="1249"></div>
     <div class="wrap">
-      <p class="eyebrow" data-i18n="k.eb">06 — Kontakt</p>
       <h2 id="kontakt-h" data-i18n="k.h">Napište, jaké<br>auto hledáte.</h2>
       <p class="lede" data-i18n="k.lede">Model, výbava, barva, termín. Ozveme se s&nbsp;nabídkou.</p>
       <div class="mail">
@@ -539,7 +468,6 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
           <a class="btn btn-ghost" href="mailto:jan@casabuena.cz" data-i18n="k.mail">Napsat e-mail ↗</a>
         </div>
       </div>
-      <p class="contact-addr">Casa Buena s.r.o. · Partyzánské náměstí 1738/3 · 702&nbsp;00 Ostrava</p>
     </div>
   </section>
 </main>
@@ -550,7 +478,7 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
       <span class="brand-word">CASA BUENA <span class="brand-sub">AUTOMOTIVE</span></span>
       <p>© 2026 Casa Buena s.r.o. · IČO 23325151</p>
     </div>
-    <p data-i18n="ft">Videa: <a href="https://mixkit.co/free-stock-video/large-container-area-working-at-night-36318/">Mixkit</a>, <a href="https://mixkit.co/free-stock-video/large-cargo-ship-leaving-for-the-ocean-35866/">Mixkit</a>, <a href="https://mixkit.co/free-stock-video/cargo-truck-driving-on-the-highway-28787/">Mixkit</a> (Mixkit Free License). Fotografie z&nbsp;Wikimedia Commons: Voyah Taishan od <a href="https://commons.wikimedia.org/wiki/File:Voyah_Taishan_MY2026_IMG01.jpg">Poprace</a> a&nbsp;<a href="https://commons.wikimedia.org/wiki/File:Voyah_Taishan_001.jpg">JustAnotherCarDesigner</a> (CC0); Bremerhaven od Bundesanstalt für Wasserbau (<a href="https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592739647).jpg">1</a>, <a href="https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592444761).jpg">2</a>; <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, oříznuto) a&nbsp;<a href="https://commons.wikimedia.org/wiki/File:CT3_bremerhaven_hg.jpg">Hannes Grobe</a> (<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>). Mapa: <a href="https://www.naturalearthdata.com/">Natural Earth</a>.</p>
+    <p data-i18n="ft">Fotografie: Bremerhaven od Bundesanstalt für Wasserbau (<a href="https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592739647).jpg">1</a>, <a href="https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592444761).jpg">2</a>; <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, oříznuto) a&nbsp;<a href="https://commons.wikimedia.org/wiki/File:CT3_bremerhaven_hg.jpg">Hannes Grobe</a> (<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>), Wikimedia Commons.</p>
   </div>
 </footer>
 
@@ -564,10 +492,6 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
   const clamp01 = x => Math.max(0, Math.min(1, x));
   const smooth = (a, b, x) => { const t = clamp01((x - a) / (b - a)); return t * t * (3 - 2 * t); };
   const put = (el, v) => { if (el.textContent !== v) el.textContent = v; };
-
-  // A second copy of the ticker list makes the marquee loop seamless.
-  const track = $('.ticker-track');
-  track.append(track.firstElementChild.cloneNode(true));
 
   /* ---------- Route globe ---------- */
   const D = Math.PI / 180, EARTH_KM = 6371;
@@ -794,43 +718,40 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
   };
   const EN = {
     skip: 'Skip to content', 'nav.route': 'The route', 'nav.steps': 'How it works', 'nav.who': 'Who it’s for', 'nav.firm': 'Company', cta: 'Request a car',
-    'h.eb': 'Car imports from China · Ostrava', h1a: 'Chinese cars.', h1b: 'Czech plates.',
+    h1a: 'Chinese cars.', h1b: 'Czech plates.',
     'h.sub': 'We buy cars from Chinese brands in our own company’s name, ship them in a container via Bremerhaven, clear customs, and get them approved and registered. You collect a road-ready car.',
     'h.cta1': 'Request a car', 'h.cta2': 'How the import works',
-    t1: 'China → Bremerhaven → Ostrava', t2: 'Approx. 5–7 weeks at sea', t3: 'T1 transit, duty paid in Czechia', t4: 'Importer Casa Buena s.r.o.', t6: 'Approval · registration · plates',
-    'j.eb': '01 — The route', 'j.h': 'From China<br>to Ostrava.',
+    'j.h': 'From China<br>to Ostrava.',
     'j.lede': 'This is what the route can look like: around Africa, over 26,000 km by sea to Bremerhaven, then overland to Ostrava. Scroll to follow the container.',
-    'j.day': 'Day', 'j.tag': 'Indicative',
+    'j.day': 'Day',
     st0: 'China', st0d: 'The car is loaded into a container at a Chinese port.',
     st1: 'South China Sea', st1d: 'The ship heads south, past Singapore into the Strait of Malacca.',
     st2: 'Indian Ocean', st2d: 'The longest leg: weeks on the open ocean.',
     st3: 'Cape of Good Hope', st3d: 'The shipping line picks the route: around Africa or through Suez.',
     st4: 'Atlantic', st4d: 'North along Africa and Europe, through the English Channel into the North Sea.',
-    st5: 'Bremerhaven', st5d: 'Unloading. The container continues overland under T1 transit; duty is paid in Czechia.',
+    st5: 'Bremerhaven', st5d: 'Unloading. The container continues overland; duty is paid in Czechia.',
     st6: 'Ostrava', st6d: 'Customs clearance, technical approval and registration. Then handover.',
     'sea.a': '5–7 weeks', 'sea.b': 'at sea', 'sea.note': 'We track the container all the way.',
-    's.eb': '02 — How it works', 's.h': 'Eight steps<br>to Czech plates.', 's.lede': 'Every step has a clear output. You know where the car is and what is happening to it.',
-    out: 'Output',
-    s1: 'Choosing the car', s1p: 'Tell us the car you want: model, trim, colour. We check the price, availability and what Czech approval will require.', s1o: 'Offer with price and date', s1s: 'Ordered',
-    s2: 'Purchase', s2p: 'Casa Buena buys the car in its own name, so we are the importer. No foreign payments or customs paperwork for you.', s2o: 'Purchase documents', s2s: 'Purchased',
-    s3: 'Container and sea', s3p: 'The car is loaded into a container in China and shipped to Bremerhaven. Roughly 5 to 7 weeks at sea.', s3o: 'Bill of lading (B/L)', s3s: 'Loaded',
-    s4: 'Bremerhaven → Czechia', s4p: 'In Bremerhaven the container is unloaded and continues overland under T1 transit, so duty and VAT are paid in Czechia.', s4o: 'T1 transit document', s4s: 'In transit',
-    s5: 'Customs and VAT', s5p: 'We clear the car through customs in Czechia, pay duty and import VAT, and the car is released for free circulation in the EU.', s5o: 'Release for free circulation', s5s: 'Cleared',
-    s6: 'Technical approval', s6p: 'We supply the technical documentation and the car goes through individual approval as a single imported vehicle.', s6o: 'Vehicle technical certificate', s6s: 'Approved',
-    s7: 'Localisation', s7p: 'Where the model allows it, we switch the system to Czech or English and set up European apps.', s7o: 'System in Czech or English', s7s: 'Localised',
-    s8: 'Registration and handover', s8p: 'We register the car and it gets Czech plates. Then we hand it over to you. Dealers receive cars ready for registration.', s8o: 'Registration certificate and plates', s8s: 'Delivered',
-    'c.eb': '03 — For example', 'c.lede': 'A large SUV from Voyah, part of the Dongfeng group. We can buy a car like this for you in China and bring it all the way to registration.',
-    c1: 'Front', c2: 'Side', c3: 'Interior', c4: 'Showroom', 'c.note': 'Illustrative photos from Wikimedia Commons.',
-    'w.eb': '04 — Who it’s for', 'w.h': 'For drivers.<br>For dealers.',
+    's.h': 'Eight steps<br>to Czech plates.', 's.lede': 'You know where the car is and what is happening to it.',
+    s1: 'Choosing the car', s1p: 'Tell us the car you want: model, trim, colour. We check the price, availability and what Czech approval will require.',
+    s2: 'Purchase', s2p: 'Casa Buena buys the car in its own name, so we are the importer. No foreign payments or customs paperwork for you.',
+    s3: 'Container and sea', s3p: 'The car is loaded into a container in China and shipped to Bremerhaven. Roughly 5 to 7 weeks at sea.',
+    s4: 'Bremerhaven → Czechia', s4p: 'In Bremerhaven the container is unloaded and continues overland. Duty and VAT are paid in Czechia.',
+    s5: 'Customs and VAT', s5p: 'We clear the car through customs in Czechia and pay duty and import VAT. The car is then officially imported into the EU.',
+    s6: 'Technical approval', s6p: 'We supply the technical documentation and get the car approved for Czech roads.',
+    s7: 'Localisation', s7p: 'Where the model allows it, we switch the system to Czech or English and set up European apps.',
+    s8: 'Registration and handover', s8p: 'We register the car and it gets Czech plates. Then we hand it over to you. Dealers receive cars ready for registration.',
+    'c.lede': 'A large SUV from Voyah, part of the Dongfeng group. We can buy a car like this for you in China and bring it all the way to registration.',
+    'w.h': 'For drivers.<br>For dealers.',
     w1: 'Drivers and companies', w1p: 'You want a specific Chinese car that nobody here offers. Send us the model and trim; we come back with an offer, price and date. You collect the car with Czech plates.',
     w1a: 'Your exact model and trim', w1b: 'Offer with price and date', w1c: 'Handover with Czech plates',
     w2: 'Dealers', w2p: 'Add Chinese models to your range without running imports yourself. We deliver cars cleared and approved, ready to register and sell.',
     w2a: 'Casa Buena is the importer', w2b: 'Cleared and approved cars', w2c: 'Ready for registration',
-    'f.eb': '05 — Company', 'f.h': 'A Czech company<br>from Ostrava.', 'f.lede': 'We import cars in our own company’s name, so customs, VAT and paperwork all go through us. You can check every detail in the public registers.',
+    'f.h': 'A Czech company<br>from Ostrava.', 'f.lede': 'We import cars in our own company’s name, so customs, VAT and paperwork all go through us. You can check every detail in the public registers.',
     'f.or': 'Commercial register ↗', 'r.head': 'Company details', 'r.name': 'Company name', 'r.ico': 'Company ID', 'r.dic': 'VAT ID', 'r.dicv': 'CZ23325151, VAT payer',
     'r.seat': 'Registered office', 'r.zap': 'Registration', 'r.zapv': 'Regional Court in Ostrava, section C, file 99494', 'r.jed': 'Managing director', 'r.ds': 'Data box',
-    'k.eb': '06 — Contact', 'k.h': 'Tell us the car<br>you’re after.', 'k.lede': 'Model, trim, colour, timing. We’ll come back with an offer.', 'k.mail': 'Write an email ↗',
-    ft: 'Videos: <a href="https://mixkit.co/free-stock-video/large-container-area-working-at-night-36318/">Mixkit</a>, <a href="https://mixkit.co/free-stock-video/large-cargo-ship-leaving-for-the-ocean-35866/">Mixkit</a>, <a href="https://mixkit.co/free-stock-video/cargo-truck-driving-on-the-highway-28787/">Mixkit</a> (Mixkit Free License). Photos from Wikimedia Commons: Voyah Taishan by <a href="https://commons.wikimedia.org/wiki/File:Voyah_Taishan_MY2026_IMG01.jpg">Poprace</a> and <a href="https://commons.wikimedia.org/wiki/File:Voyah_Taishan_001.jpg">JustAnotherCarDesigner</a> (CC0); Bremerhaven by Bundesanstalt für Wasserbau (<a href="https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592739647).jpg">1</a>, <a href="https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592444761).jpg">2</a>; <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, cropped) and <a href="https://commons.wikimedia.org/wiki/File:CT3_bremerhaven_hg.jpg">Hannes Grobe</a> (<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>). Map: <a href="https://www.naturalearthdata.com/">Natural Earth</a>.',
+    'k.h': 'Tell us the car<br>you’re after.', 'k.lede': 'Model, trim, colour, timing. We’ll come back with an offer.', 'k.mail': 'Write an email ↗',
+    ft: 'Photos: Bremerhaven by Bundesanstalt für Wasserbau (<a href="https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592739647).jpg">1</a>, <a href="https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592444761).jpg">2</a>; <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, cropped) and <a href="https://commons.wikimedia.org/wiki/File:CT3_bremerhaven_hg.jpg">Hannes Grobe</a> (<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>), Wikimedia Commons.',
   };
   const nodes = $$('[data-i18n]'), CS = {};
   nodes.forEach(n => { CS[n.dataset.i18n] ??= n.innerHTML; });
