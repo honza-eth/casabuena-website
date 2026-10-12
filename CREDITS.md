@@ -14,10 +14,6 @@ Všechno v `assets/` je převzaté z veřejných zdrojů s licencí, která dovo
 
 | Soubor | Originál | Autor | Licence | Úpravy |
 |---|---|---|---|---|
-| `voyah-front.webp` | [Voyah_Taishan_MY2026_IMG01.jpg](https://commons.wikimedia.org/wiki/File:Voyah_Taishan_MY2026_IMG01.jpg) | Poprace | CC0 | zmenšeno |
-| `voyah-side.webp` | [Voyah_Taishan_001.jpg](https://commons.wikimedia.org/wiki/File:Voyah_Taishan_001.jpg) | JustAnotherCarDesigner | CC0 | zmenšeno |
-| `voyah-showroom.webp` | [Voyah_Taishan_003.jpg](https://commons.wikimedia.org/wiki/File:Voyah_Taishan_003.jpg) | JustAnotherCarDesigner | CC0 | zmenšeno |
-| `voyah-interior.webp` | [Voyah_Taishan_005.jpg](https://commons.wikimedia.org/wiki/File:Voyah_Taishan_005.jpg) | JustAnotherCarDesigner | CC0 | zmenšeno |
 | `bhv-ship.webp` | [Containerterminal_Bremerhaven_Weser_(49592739647).jpg](https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592739647).jpg) | Bundesanstalt für Wasserbau (Federal Waterways Engineering and Research Institute) | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | oříznuté 4 % vpravo (vodoznak), zmenšeno |
 | `bhv-cars.webp` | [Containerterminal_Bremerhaven_Weser_(49592444761).jpg](https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592444761).jpg) | Bundesanstalt für Wasserbau | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | oříznuté 4 % vpravo (vodoznak), zmenšeno |
 | `bhv-cranes-night.webp` | [CT3_bremerhaven_hg.jpg](https://commons.wikimedia.org/wiki/File:CT3_bremerhaven_hg.jpg) | Hannes Grobe | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) | zmenšeno |

@@ -148,6 +148,100 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
 .step-side { align-self: start; padding-top: 6px; }
 .step-media { margin: 0; aspect-ratio: 4 / 3; overflow: hidden; background: var(--hull); }
 .step-media img, .step-media video { width: 100%; height: 100%; object-fit: cover; }
+/* Step scenes are drawn in SVG and run while on screen. The base style is the last frame, so reduced motion and no JS show it still. */
+.fx { background: radial-gradient(circle, rgba(170, 190, 207, .12) 1px, transparent 1.4px) 0 0 / 14px 14px, var(--hull); border: 1px solid var(--line); }
+.fx svg { width: 100%; height: 100%; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.fx svg * { transform-box: fill-box; transform-origin: center; }
+.fx text { fill: var(--steel); stroke: none; font: 500 13px var(--f-mono); letter-spacing: .04em; }
+.fx .tx { fill: var(--fog); }
+.fx .so { fill: var(--sodium); }
+.fx .dk { fill: var(--night); }
+.fx .big { font: 800 64px var(--f-head); fill: var(--fog); }
+.fx .ln { stroke: var(--line-2); stroke-width: 1.2; }
+.fx .hair { stroke: var(--line); }
+.fx .st { stroke: var(--steel); stroke-width: 1.2; }
+.fx .ol { fill: var(--night); stroke: var(--mist); stroke-width: 1.4; }
+.fx .card { fill: rgba(10, 15, 20, .8); stroke: var(--line-2); }
+.fx .row { fill: rgba(10, 15, 20, .7); stroke: var(--line); }
+.fx .box { stroke: var(--line-2); stroke-width: 1.2; }
+.fx .chip { fill: rgba(255, 166, 48, .07); stroke: var(--sodium); stroke-width: 1.2; }
+.fx .or { stroke: var(--sodium); stroke-width: 2; }
+.fx .hi, .fx .ok circle { fill: var(--sodium); }
+.fx .ok path, .fx .ck { stroke: var(--night); stroke-width: 2.2; }
+.fx .dash, .fx .wake, .fx .lane { stroke-dasharray: 2 6; }
+.fx .in { animation: fx-in .6s var(--d, 0s) both; }
+.fx .up { animation: fx-up .7s var(--d, 0s) var(--ease) both; }
+.fx .pop { animation: fx-pop .5s var(--d, 0s) var(--ease) both; }
+.fx .cyc > * { animation: fx-cyc 10s infinite both; }
+.fx .cyc > :not(:first-child) { opacity: 0; }
+.fx .cyc > :nth-child(2) { animation-delay: -7.5s; }
+.fx .cyc > :nth-child(3) { animation-delay: -5s; }
+.fx .cyc > :nth-child(4) { animation-delay: -2.5s; }
+.fx1 .ship { transform: translateX(176px); animation: fx-sail 6s .3s cubic-bezier(.45, 0, .25, 1) both; }
+.fx1 .bob { animation: fx-bob 3.4s ease-in-out infinite; }
+.fx1 .wake { opacity: .6; animation: fx-in 2s 1.4s both; }
+.fx1 .vin { fill: var(--sodium); animation: fx-vin .4s 2.7s both; }
+.fx2 .prog { stroke-dasharray: 1; animation: fx-draw 3s .2s cubic-bezier(.45, 0, .25, 1) both; }
+.fx2 .mk { animation: fx-mark 3s .2s cubic-bezier(.45, 0, .25, 1) both; }
+.fx2 .ping { stroke: var(--sodium); opacity: 0; animation: fx-ping 2s 3.2s ease-out infinite; }
+.fx2 .draft { opacity: 0; animation: fx-gone .3s 1.6s both; }
+.fx5 .car { transform: translate(var(--fx), var(--fy)); animation: fx-car 2.6s var(--d) both; }
+.fx5 .car rect { fill: var(--fog); }
+.fx5 .car path { stroke: var(--night); stroke-width: 1.6; }
+.fx5 .door { stroke: var(--mist); stroke-width: 2; transform-box: view-box; transform-origin: 190px 126px; transform: rotate(-110deg); animation: fx-door .8s .3s var(--ease) both; }
+.fx5 .db { transform-origin: 190px 174px; transform: rotate(110deg); }
+.fx5 .lane { stroke-width: 1.4; }
+.fx5 .tag rect { stroke: var(--sodium); animation: fx-tag .5s var(--d) both; }
+.fx6 .eu circle { fill: var(--sodium); }
+.fx6 .stamp { transform: rotate(-8deg); animation: fx-stamp .55s 2.3s cubic-bezier(.3, 1.4, .5, 1) both; }
+.fx6 .stamp rect { fill: rgba(255, 166, 48, .08); stroke: var(--sodium); stroke-width: 2.5; }
+.fx6 .stamp text { font: 800 31px var(--f-head); letter-spacing: .06em; fill: var(--sodium); }
+.fx7 .tyre { stroke: var(--steel); stroke-width: 7; stroke-linecap: butt; }
+.fx7 .glass { fill: rgba(194, 204, 213, .07); stroke: var(--line-2); }
+.fx7 .scan { opacity: 0; animation: fx-scan 1.8s .4s ease-in-out both; }
+.fx7 .cc text { fill: var(--night); }
+.fx8 text { font-size: 12px; }
+.fx8 .scr { fill: #070b0f; stroke: var(--line-2); }
+.fx8 .pane { fill: #0d151c; }
+.fx8 .pill { fill: rgba(255, 166, 48, .1); stroke: var(--sodium); }
+.fx8 .route { stroke-dasharray: 1; animation: fx-draw 1.6s 3.3s ease-out both; }
+.fx8 .bar { stroke-dasharray: 1; animation: fx-draw 6s 3.3s linear both; }
+.fx8 .zh { opacity: 0; animation: fx-zh 3.3s .2s both; }
+.fx8 .eu { animation: fx-eu 7.5s 3.2s infinite both; }
+.fx8 .de { opacity: 0; animation-delay: 5.7s; }
+.fx8 .cs { opacity: 0; animation-delay: 8.2s; }
+.fx8 .a0 { fill: var(--sodium); }
+.fx8 .a1 { fill: var(--mist); fill-opacity: .55; }
+.fx8 .a2 { fill: var(--mist); fill-opacity: .3; }
+.fx9 .plate { fill: #e9edf1; }
+.fx9 .rim { stroke: var(--night); stroke-width: 1.5; }
+.fx9 .band { fill: #2350b0; }
+.fx9 .stars circle { fill: #ffcc00; }
+.fx9 .pc text { font: 800 16px var(--f-head); fill: #fff; }
+.fx9 .pn text { font: 800 50px var(--f-head); letter-spacing: .05em; fill: var(--night); }
+.js .fx:not(.play) * { animation-play-state: paused !important; }
+@keyframes fx-in { from { opacity: 0; } }
+@keyframes fx-up { from { opacity: 0; transform: translateY(12px); } }
+@keyframes fx-pop { from { opacity: 0; transform: scale(.3); } 70% { transform: scale(1.12); } }
+@keyframes fx-gone { from { opacity: 1; } }
+@keyframes fx-cyc { 0%, 22% { opacity: 1; } 23.5%, 98.5% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes fx-draw { from { stroke-dashoffset: 1; } }
+@keyframes fx-sail { from { transform: none; } }
+@keyframes fx-bob { 50% { transform: translateY(1.6px) rotate(.4deg); } }
+@keyframes fx-vin { from { fill: var(--steel); } }
+@keyframes fx-mark { from { transform: translateX(-216px); } }
+@keyframes fx-ping { from { opacity: .9; transform: scale(1); } to { opacity: 0; transform: scale(3); } }
+@keyframes fx-car {
+  0% { transform: none; animation-timing-function: cubic-bezier(.5, 0, .9, .6); }
+  30% { transform: translate(var(--ex), 0); animation-timing-function: linear; }
+  62% { transform: translate(var(--mx), var(--my)) rotate(var(--r)); animation-timing-function: cubic-bezier(.2, .6, .3, 1); }
+}
+@keyframes fx-door { from { transform: none; } }
+@keyframes fx-tag { from { stroke: var(--line-2); } }
+@keyframes fx-stamp { from { opacity: 0; transform: rotate(-8deg) scale(1.9); } }
+@keyframes fx-scan { from { opacity: 1; transform: none; } 90% { opacity: 1; transform: translateX(212px); } to { opacity: 0; transform: translateX(212px); } }
+@keyframes fx-zh { from, 88% { opacity: 1; } }
+@keyframes fx-eu { 0% { opacity: 0; } 4%, 33% { opacity: 1; } 37%, 100% { opacity: 0; } }
 
 /* Know-how */
 .know { padding: clamp(80px, 10vw, 150px) 0; border-top: 1px solid var(--line); }
@@ -329,12 +423,47 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
             <h3 data-i18n="s1">Leaving China</h3>
             <p data-i18n="s1p">The exporter loads the car and the ship sails. That is where the exporter’s job ends and ours begins. We collect the commercial invoice, packing list and car documents and check that they match.</p>
           </div>
+          <div class="step-side">
+            <figure class="step-media fx fx1" aria-hidden="true"><svg viewBox="0 0 400 300">
+              <path class="ln" d="M0 128H400M24 128V40M10 48H96M24 58L44 48"/>
+              <rect class="ol" x="-2" y="128" width="46" height="12"/>
+              <text x="14" y="160">CN</text><text x="386" y="160" text-anchor="end">EU →</text>
+              <g class="ship"><g class="bob">
+                <path class="or wake" d="M52 130H-90"/>
+                <rect class="ol" x="54" y="84" width="14" height="22"/>
+                <rect x="74" y="97" width="14" height="8" fill="#c2ccd5" fill-opacity="0.34"/><rect x="89" y="97" width="14" height="8" fill="#c2ccd5" fill-opacity="0.2"/><rect x="104" y="97" width="14" height="8" fill="#c2ccd5" fill-opacity="0.34"/><rect x="119" y="97" width="14" height="8" fill="#c2ccd5" fill-opacity="0.2"/><rect x="134" y="97" width="14" height="8" fill="#c2ccd5" fill-opacity="0.34"/><rect x="149" y="97" width="14" height="8" fill="#c2ccd5" fill-opacity="0.2"/><rect x="164" y="97" width="14" height="8" fill="#c2ccd5" fill-opacity="0.34"/><rect x="179" y="97" width="14" height="8" fill="#c2ccd5" fill-opacity="0.2"/><rect x="74" y="88" width="14" height="8" fill="#c2ccd5" fill-opacity="0.2"/><rect x="89" y="88" width="14" height="8" fill="#c2ccd5" fill-opacity="0.34"/><rect x="104" y="88" width="14" height="8" fill="#c2ccd5" fill-opacity="0.2"/><rect x="119" y="88" width="14" height="8" fill="#ffa630"/><rect x="134" y="88" width="14" height="8" fill="#c2ccd5" fill-opacity="0.2"/><rect x="149" y="88" width="14" height="8" fill="#c2ccd5" fill-opacity="0.34"/><rect x="164" y="88" width="14" height="8" fill="#c2ccd5" fill-opacity="0.2"/>
+                <path class="ol" d="M48 106H204L192 131H62Z"/>
+              </g></g>
+              <g class="up" style="--d:0.9s"><rect class="row" x="14" y="178" width="372" height="30" rx="3"/><path class="st" d="M28 185h11l4 4v12H28z"/><text class="tx" x="56" y="198" data-i18n="fx.inv">COMMERCIAL INVOICE</text><text class="vin" x="334" y="198" text-anchor="end">VIN ··4821</text><g class="ok pop" style="--d:3s"><circle cx="364" cy="193" r="9"/><path d="M360 193l3 3 5-6"/></g></g>
+              <g class="up" style="--d:1.2s"><rect class="row" x="14" y="214" width="372" height="30" rx="3"/><path class="st" d="M28 221h11l4 4v12H28z"/><text class="tx" x="56" y="234" data-i18n="fx.pack">PACKING LIST</text><text class="vin" x="334" y="234" text-anchor="end">VIN ··4821</text><g class="ok pop" style="--d:3.15s"><circle cx="364" cy="229" r="9"/><path d="M360 229l3 3 5-6"/></g></g>
+              <g class="up" style="--d:1.5s"><rect class="row" x="14" y="250" width="372" height="30" rx="3"/><path class="st" d="M28 257h11l4 4v12H28z"/><text class="tx" x="56" y="270" data-i18n="fx.docs">CAR DOCUMENTS</text><text class="vin" x="334" y="270" text-anchor="end">VIN ··4821</text><g class="ok pop" style="--d:3.3s"><circle cx="364" cy="265" r="9"/><path d="M360 265l3 3 5-6"/></g></g>
+            </svg></figure>
+          </div>
         </li>
         <li class="step">
           <span class="step-num">02</span>
           <div class="step-body">
             <h3 data-i18n="s2">At sea</h3>
             <p data-i18n="s2p">During the voyage the shipping line issues the bill of lading (B/L). We make sure the exporter releases it in time, chase anything missing and book the port, transport and clearance in advance.</p>
+          </div>
+          <div class="step-side">
+            <figure class="step-media fx fx2" aria-hidden="true"><svg viewBox="0 0 400 300">
+              <text x="16" y="49">CN</text><text x="384" y="49" text-anchor="end">EU</text>
+              <path class="ln dash" d="M46 44H354"/>
+              <path class="or prog" pathLength="1" d="M46 44H262"/>
+              <g class="mk"><circle class="ping" cx="262" cy="44" r="6"/><circle class="hi" cx="262" cy="44" r="5"/></g>
+              <rect class="card" x="16" y="78" width="180" height="204" rx="3"/>
+              <text x="32" y="104" data-i18n="fx.bl">BILL OF LADING</text>
+              <text class="big" x="30" y="168">B/L</text>
+              <path class="ln" d="M32 190H172M32 202H140"/>
+              <g class="draft"><rect class="box" x="32" y="222" width="148" height="40" rx="3"/><text x="106" y="247" text-anchor="middle" data-i18n="fx.draft">DRAFT</text></g>
+              <g class="pop" style="--d:1.7s"><rect class="hi" x="32" y="222" width="148" height="40" rx="3"/><text class="dk" x="106" y="247" text-anchor="middle" data-i18n="fx.rel">RELEASED</text></g>
+              <text x="214" y="104" data-i18n="fx.ahead">BOOKED AHEAD</text>
+              <path class="ln" d="M214 120H384"/><text class="tx" x="214" y="148" data-i18n="fx.port">PORT</text><rect class="box" x="360" y="132" width="22" height="22" rx="3"/><g class="pop" style="--d:2.2s"><rect class="hi" x="360" y="132" width="22" height="22" rx="3"/><path class="ck" d="M366 143l3.5 3.5 6-7"/></g>
+              <path class="ln" d="M214 166H384"/><text class="tx" x="214" y="194" data-i18n="fx.trans">TRANSPORT</text><rect class="box" x="360" y="178" width="22" height="22" rx="3"/><g class="pop" style="--d:2.6s"><rect class="hi" x="360" y="178" width="22" height="22" rx="3"/><path class="ck" d="M366 189l3.5 3.5 6-7"/></g>
+              <path class="ln" d="M214 212H384"/><text class="tx" x="214" y="240" data-i18n="fx.cust">CUSTOMS</text><rect class="box" x="360" y="224" width="22" height="22" rx="3"/><g class="pop" style="--d:3s"><rect class="hi" x="360" y="224" width="22" height="22" rx="3"/><path class="ck" d="M366 235l3.5 3.5 6-7"/></g>
+              <path class="ln" d="M214 258H384"/>
+            </svg></figure>
           </div>
         </li>
         <li class="step">
@@ -363,12 +492,45 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
             <h3 data-i18n="s5">Out of the container</h3>
             <p data-i18n="s5p">Before clearance we unload the cars and get them ready for customs. This is where a container can be split, so each car can go its own way.</p>
           </div>
+          <div class="step-side">
+            <figure class="step-media fx fx5" aria-hidden="true"><svg viewBox="0 0 400 300">
+              <text x="16" y="34" data-i18n="fx.cbc">CAR BY CAR</text><text x="16" y="116">40′</text>
+              <path class="or lane in" style="--d:1.4s" d="M192 150C250 150 240 54 298 54"/>
+              <path class="or lane in" style="--d:2s" d="M192 150C250 150 240 118 298 118"/>
+              <path class="or lane in" style="--d:2.6s" d="M192 150C250 150 240 182 298 182"/>
+              <path class="or lane in" style="--d:3.2s" d="M192 150C250 150 240 246 298 246"/>
+              <rect class="ol" x="16" y="126" width="174" height="48" rx="2"/>
+              <path class="ln" d="M22 126v4M22 170v4M28 126v4M28 170v4M34 126v4M34 170v4M40 126v4M40 170v4M46 126v4M46 170v4M52 126v4M52 170v4M58 126v4M58 170v4M64 126v4M64 170v4M70 126v4M70 170v4M76 126v4M76 170v4M82 126v4M82 170v4M88 126v4M88 170v4M94 126v4M94 170v4M100 126v4M100 170v4M106 126v4M106 170v4M112 126v4M112 170v4M118 126v4M118 170v4M124 126v4M124 170v4M130 126v4M130 170v4M136 126v4M136 170v4M142 126v4M142 170v4M148 126v4M148 170v4M154 126v4M154 170v4M160 126v4M160 170v4M166 126v4M166 170v4M172 126v4M172 170v4M178 126v4M178 170v4M184 126v4M184 170v4"/>
+              <g class="car" style="--ex:48px;--mx:79px;--my:-48px;--r:-63deg;--fx:152px;--fy:-96px;--d:0.9s"><rect x="148" y="141" width="36" height="18" rx="5"/><path d="M172 143.5v13M156 144v12"/></g>
+              <g class="car" style="--ex:90px;--mx:121px;--my:-16px;--r:-34deg;--fx:194px;--fy:-32px;--d:1.5s"><rect x="106" y="141" width="36" height="18" rx="5"/><path d="M130 143.5v13M114 144v12"/></g>
+              <g class="car" style="--ex:132px;--mx:163px;--my:16px;--r:34deg;--fx:236px;--fy:32px;--d:2.1s"><rect x="64" y="141" width="36" height="18" rx="5"/><path d="M88 143.5v13M72 144v12"/></g>
+              <g class="car" style="--ex:174px;--mx:205px;--my:48px;--r:63deg;--fx:278px;--fy:96px;--d:2.7s"><rect x="22" y="141" width="36" height="18" rx="5"/><path d="M46 143.5v13M30 144v12"/></g>
+              <path class="door" d="M190 126V150"/><path class="door db" d="M190 174V150"/>
+              <g class="tag" style="--d:3.2s"><rect x="348" y="42" width="40" height="24" rx="3"/><text class="tx" x="368" y="59" text-anchor="middle">CZ</text></g>
+              <g class="tag" style="--d:3.8s"><rect x="348" y="106" width="40" height="24" rx="3"/><text class="tx" x="368" y="123" text-anchor="middle">DE</text></g>
+              <g class="tag" style="--d:4.4s"><rect x="348" y="170" width="40" height="24" rx="3"/><text class="tx" x="368" y="187" text-anchor="middle">PL</text></g>
+              <g class="tag" style="--d:5s"><rect x="348" y="234" width="40" height="24" rx="3"/><text class="tx" x="368" y="251" text-anchor="middle">IT</text></g>
+            </svg></figure>
+          </div>
         </li>
         <li class="step">
           <span class="step-num">06</span>
           <div class="step-body">
             <h3 data-i18n="s6">Customs</h3>
             <p data-i18n="s6p">At the port or in the EU country you choose, with a customs broker we trust, picked case by case. You usually remain the importer. It’s the cleanest route, and we prepare the paperwork.</p>
+          </div>
+          <div class="step-side">
+            <figure class="step-media fx fx6" aria-hidden="true"><svg viewBox="0 0 400 300">
+              <rect class="card" x="36" y="18" width="328" height="264" rx="4"/>
+              <text class="tx" x="56" y="50" data-i18n="fx.decl">IMPORT DECLARATION</text>
+              <g class="eu"><circle cx="336" cy="36" r="1.5"/><circle cx="340.5" cy="37.2" r="1.5"/><circle cx="343.8" cy="40.5" r="1.5"/><circle cx="345" cy="45" r="1.5"/><circle cx="343.8" cy="49.5" r="1.5"/><circle cx="340.5" cy="52.8" r="1.5"/><circle cx="336" cy="54" r="1.5"/><circle cx="331.5" cy="52.8" r="1.5"/><circle cx="328.2" cy="49.5" r="1.5"/><circle cx="327" cy="45" r="1.5"/><circle cx="328.2" cy="40.5" r="1.5"/><circle cx="331.5" cy="37.2" r="1.5"/></g>
+              <path class="ln" d="M56 66H344"/><path class="hair" d="M56 106H344M56 136H344M56 166H344"/>
+              <text x="56" y="94" data-i18n="fx.imp">IMPORTER</text><text class="so up" style="--d:0.5s" x="344" y="94" text-anchor="end" data-i18n="fx.you">YOU</text>
+              <text x="56" y="124">VIN</text><text class="tx up" style="--d:0.9s" x="344" y="124" text-anchor="end">··4821</text>
+              <text x="56" y="154">HS</text><text class="tx up" style="--d:1.3s" x="344" y="154" text-anchor="end">8703</text>
+              <text x="56" y="184" data-i18n="fx.duty">DUTY + VAT</text><text class="tx up" style="--d:1.7s" x="344" y="184" text-anchor="end" data-i18n="fx.paid">PAID</text>
+              <g class="stamp"><rect x="142" y="211" width="188" height="46" rx="4"/><text x="236" y="246" text-anchor="middle" data-i18n="fx.freed">RELEASED</text></g>
+            </svg></figure>
           </div>
         </li>
         <li class="step">
@@ -377,15 +539,47 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
             <h3 data-i18n="s7">Homologation</h3>
             <p data-i18n="s7p">We supply the technical documentation and get the car approved in the country where it will be registered.</p>
           </div>
+          <div class="step-side">
+            <figure class="step-media fx fx7" aria-hidden="true"><svg viewBox="0 0 400 300">
+              <path class="or in" style="--d:0.1s" d="M92 74V58H108M292 58H308V74M308 162V178H292M108 178H92V162"/>
+              <path class="tyre" d="M128 75h24M248 75h24M128 161h24M248 161h24"/>
+              <rect class="ol" x="224" y="70" width="10" height="7" rx="2"/><rect class="ol" x="224" y="159" width="10" height="7" rx="2"/>
+              <rect class="ol" x="110" y="77" width="180" height="82" rx="26"/>
+              <rect class="glass" x="150" y="87" width="104" height="62" rx="14"/>
+              <path class="ln" d="M234 89V147M168 91V145"/><path class="st" d="M276 98Q285 118 276 138"/>
+              <path class="ln in" style="--d:1.2s" d="M110 196H290M110 190v12M290 190v12M326 77V159M320 77h12M320 159h12"/>
+              <g class="scan"><rect x="90" y="60" width="10" height="116" fill="#ffa630" fill-opacity=".18"/><rect x="94" y="60" width="2" height="116" fill="#ffa630"/></g>
+              <g class="ok pop" style="--d:1.9s"><circle cx="34" cy="239" r="9"/><path d="M30 239l3 3 5-6"/></g><text class="tx in" style="--d:1.9s" x="52" y="244" data-i18n="fx.tdoc">TECH. DOCS</text>
+              <g class="up" style="--d:2.4s"><rect class="chip" x="196" y="222" width="188" height="34" rx="3"/><text class="tx" x="212" y="244" data-i18n="fx.appr">APPROVED</text><rect class="hi" x="328" y="227" width="50" height="24" rx="2"/><g class="cyc cc"><text x="353" y="244" text-anchor="middle">CZ</text><text x="353" y="244" text-anchor="middle">DE</text><text x="353" y="244" text-anchor="middle">PL</text><text x="353" y="244" text-anchor="middle">IT</text></g></g>
+            </svg></figure>
+          </div>
         </li>
         <li class="step">
           <span class="step-num">08</span>
           <div class="step-body">
             <h3 data-i18n="s8">Localisation</h3>
-            <p data-i18n="s8p">On request: where the model allows it, we switch the system to English or another language and set up European apps.</p>
+            <p data-i18n="s8p">On request we switch the system to English or another language and set up European apps. We do it for the Zeekr&nbsp;9X, Voyah and Lynk &amp; Co, and for any car running HarmonyOS, including the upcoming HarmonyOS&nbsp;6.</p>
           </div>
           <div class="step-side">
-            <figure class="step-media"><img src="assets/voyah-interior.webp" alt="Voyah Taishan interior with its screens" loading="lazy" width="1600" height="1200"></figure>
+            <figure class="step-media fx fx8" aria-hidden="true"><svg viewBox="0 0 400 300">
+              <defs><pattern id="fx-dots" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="1" fill="#8a9aa8" fill-opacity=".3"/></pattern></defs>
+              <rect class="scr" x="16" y="22" width="368" height="190" rx="14"/>
+              <text x="34" y="49">12:30</text><rect class="pill" x="276" y="32" width="92" height="24" rx="12"/>
+              <text class="so zh" x="322" y="49" text-anchor="middle">简体中文</text><text class="so eu en" x="322" y="49" text-anchor="middle">ENGLISH</text><text class="so eu de" x="322" y="49" text-anchor="middle">DEUTSCH</text><text class="so eu cs" x="322" y="49" text-anchor="middle">ČEŠTINA</text>
+              <rect class="pane" x="28" y="66" width="172" height="134" rx="8"/><rect x="28" y="66" width="172" height="134" rx="8" fill="url(#fx-dots)"/>
+              <text class="tx zh" x="40" y="88">导航</text><text class="tx eu en" x="40" y="88">NAVIGATION</text><text class="tx eu de" x="40" y="88">NAVIGATION</text><text class="tx eu cs" x="40" y="88">NAVIGACE</text>
+              <path class="or route" pathLength="1" d="M48 184C70 160 96 170 112 148S150 106 176 98"/><circle class="hi pop" style="--d:4.8s" cx="176" cy="98" r="5"/>
+              <rect class="pane" x="210" y="66" width="162" height="62" rx="8"/><rect class="hi" x="220" y="76" width="42" height="42" rx="5"/>
+              <text class="tx zh" x="274" y="94">音乐</text><text class="tx eu en" x="274" y="94">MUSIC</text><text class="tx eu de" x="274" y="94">MUSIK</text><text class="tx eu cs" x="274" y="94">HUDBA</text>
+              <path class="ln" d="M274 110H360"/><path class="or bar" pathLength="1" d="M274 110H330"/>
+              <rect class="pane" x="210" y="136" width="162" height="64" rx="8"/>
+              <text class="tx zh" x="222" y="156">应用</text><text class="tx eu en" x="222" y="156">APPS</text><text class="tx eu de" x="222" y="156">APPS</text><text class="tx eu cs" x="222" y="156">APLIKACE</text>
+              <rect class="pop a0" style="--d:3.6s" x="222" y="168" width="18" height="18" rx="5"/><rect class="pop a1" style="--d:3.75s" x="246" y="168" width="18" height="18" rx="5"/><rect class="pop a2" style="--d:3.9s" x="270" y="168" width="18" height="18" rx="5"/><rect class="pop a0" style="--d:4.05s" x="294" y="168" width="18" height="18" rx="5"/><rect class="pop a1" style="--d:4.2s" x="318" y="168" width="18" height="18" rx="5"/><rect class="pop a2" style="--d:4.35s" x="342" y="168" width="18" height="18" rx="5"/>
+              <g class="up" style="--d:4.2s"><rect class="chip" x="26" y="230" width="80" height="28" rx="14"/><text class="tx" x="66" y="248" text-anchor="middle">ZEEKR 9X</text></g>
+              <g class="up" style="--d:4.35s"><rect class="chip" x="118" y="230" width="57" height="28" rx="14"/><text class="tx" x="146.5" y="248" text-anchor="middle">VOYAH</text></g>
+              <g class="up" style="--d:4.5s"><rect class="chip" x="187" y="230" width="87" height="28" rx="14"/><text class="tx" x="230.5" y="248" text-anchor="middle">LYNK &amp; CO</text></g>
+              <g class="up" style="--d:4.65s"><rect class="chip" x="286" y="230" width="87" height="28" rx="14"/><text class="tx" x="329.5" y="248" text-anchor="middle">HARMONYOS</text></g>
+            </svg></figure>
           </div>
         </li>
         <li class="step">
@@ -393,6 +587,20 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
           <div class="step-body">
             <h3 data-i18n="s9">Registration and handover</h3>
             <p data-i18n="s9p">We register the car in the EU country you choose and hand it over with plates. Dealers can take cars cleared and approved, ready to register.</p>
+          </div>
+          <div class="step-side">
+            <figure class="step-media fx fx9" aria-hidden="true"><svg viewBox="0 0 400 300">
+              <g class="up" style="--d:0.2s">
+                <rect class="plate" x="40" y="58" width="320" height="70" rx="7"/><rect class="rim" x="44.5" y="62.5" width="311" height="61" rx="5"/>
+                <path class="band" d="M49.5 62.5H78V123.5H49.5A5 5 0 0 1 44.5 118.5V67.5A5 5 0 0 1 49.5 62.5Z"/><g class="stars"><circle cx="61.3" cy="72" r="1.5"/><circle cx="65.8" cy="73.2" r="1.5"/><circle cx="69" cy="76.5" r="1.5"/><circle cx="70.3" cy="81" r="1.5"/><circle cx="69" cy="85.5" r="1.5"/><circle cx="65.8" cy="88.8" r="1.5"/><circle cx="61.3" cy="90" r="1.5"/><circle cx="56.8" cy="88.8" r="1.5"/><circle cx="53.5" cy="85.5" r="1.5"/><circle cx="52.3" cy="81" r="1.5"/><circle cx="53.5" cy="76.5" r="1.5"/><circle cx="56.8" cy="73.2" r="1.5"/></g>
+                <g class="cyc pc"><text x="61" y="116" text-anchor="middle">CZ</text><text x="61" y="116" text-anchor="middle">D</text><text x="61" y="116" text-anchor="middle">PL</text><text x="61" y="116" text-anchor="middle">E</text></g>
+                <g class="cyc pn"><text x="217" y="111" text-anchor="middle">8CB 4821</text><text x="217" y="111" text-anchor="middle">B CB 4821</text><text x="217" y="111" text-anchor="middle">WE 4821K</text><text x="217" y="111" text-anchor="middle">4821 LKX</text></g>
+              </g>
+              <g class="ok pop" style="--d:0.9s"><circle cx="64" cy="186" r="9"/><path d="M60 186l3 3 5-6"/></g><text class="tx in" style="--d:0.9s" x="82" y="191" data-i18n="fx.clr">CLEARED</text>
+              <g class="ok pop" style="--d:1.2s"><circle cx="64" cy="226" r="9"/><path d="M60 226l3 3 5-6"/></g><text class="tx in" style="--d:1.2s" x="82" y="231" data-i18n="fx.appr">APPROVED</text>
+              <g class="ok pop" style="--d:1.5s"><circle cx="230" cy="186" r="9"/><path d="M226 186l3 3 5-6"/></g><text class="tx in" style="--d:1.5s" x="248" y="191" data-i18n="fx.reg">REGISTERED</text>
+              <g class="ok pop" style="--d:1.8s"><circle cx="230" cy="226" r="9"/><path d="M226 226l3 3 5-6"/></g><text class="so in" style="--d:1.8s" x="248" y="231" data-i18n="fx.hand">HANDED OVER</text>
+            </svg></figure>
           </div>
         </li>
       </ol>
@@ -731,6 +939,10 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
   }), { rootMargin: '150px' });
   $$('video[data-lazy]').forEach(v => vio.observe(v));
 
+  // Drawn step scenes run only while on screen.
+  const fio = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('play', e.isIntersecting)), { threshold: .35 });
+  $$('.fx').forEach(f => fio.observe(f));
+
   /* ---------- Language ---------- */
   const UI = {
     cs: { copy: 'Kopírovat', copied: 'Zkopírováno', selected: 'Označeno, zkopírujte', other: 'EN', aria: 'Switch to English', globe: 'Zeměkoule s trasou vozu z Číny kolem Afriky do evropského přístavu a odtud kamkoli v EU' },
@@ -763,8 +975,12 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
     s5: 'Vykládka z&nbsp;kontejneru', s5p: 'Před proclením vozy z&nbsp;kontejneru vyložíme a&nbsp;připravíme na clo. Tady se dá kontejner rozdělit, takže každý vůz může jet jinam.',
     s6: 'Proclení', s6p: 'V&nbsp;přístavu, nebo v&nbsp;zemi EU, kterou si určíte, s&nbsp;osvědčeným celním deklarantem, kterého vybíráme případ od případu. Dovozcem obvykle zůstáváte vy. Je to nejčistší cesta a&nbsp;podklady připravíme my.',
     s7: 'Technické schválení', s7p: 'Doložíme technickou dokumentaci a&nbsp;necháme vůz schválit v&nbsp;zemi, kde bude registrovaný.',
-    s8: 'Jazyk a&nbsp;aplikace', s8p: 'Na přání: kde to model dovolí, přepneme systém do češtiny, angličtiny nebo jiného jazyka a&nbsp;nastavíme evropské aplikace.',
+    s8: 'Jazyk a&nbsp;aplikace', s8p: 'Na přání přepneme systém do češtiny, angličtiny nebo jiného jazyka a&nbsp;nastavíme evropské aplikace. Umíme to u&nbsp;Zeekru&nbsp;9X, Voyahu a&nbsp;Lynk &amp; Co a&nbsp;u&nbsp;všech aut s&nbsp;HarmonyOS, včetně připravovaného HarmonyOS&nbsp;6.',
     s9: 'Registrace a&nbsp;předání', s9p: 'Vůz zaregistrujeme v&nbsp;zemi EU, kterou si určíte, a&nbsp;předáme vám ho s&nbsp;registrační značkou. Prodejcům předáme vozy proclené a&nbsp;schválené, připravené k&nbsp;registraci.',
+    'fx.inv': 'OBCHODNÍ FAKTURA', 'fx.pack': 'BALICÍ LIST', 'fx.docs': 'DOKLADY K VOZU',
+    'fx.bl': 'KONOSAMENT', 'fx.draft': 'NÁVRH', 'fx.rel': 'UVOLNĚNO', 'fx.ahead': 'DOMLUVENO PŘEDEM', 'fx.port': 'PŘÍSTAV', 'fx.trans': 'DOPRAVA', 'fx.cust': 'PROCLENÍ',
+    'fx.cbc': 'AUTO PO AUTU', 'fx.decl': 'CELNÍ PROHLÁŠENÍ', 'fx.imp': 'DOVOZCE', 'fx.you': 'VY', 'fx.duty': 'CLO + DPH', 'fx.paid': 'ZAPLACENO', 'fx.freed': 'PROPUŠTĚNO',
+    'fx.tdoc': 'DOKUMENTACE', 'fx.appr': 'SCHVÁLENO', 'fx.clr': 'PROCLENO', 'fx.reg': 'REGISTROVÁNO', 'fx.hand': 'PŘEDÁNO',
     'kn.h': 'Co se nikde<br>nedočtete.',
     'kn.lede': 'Co musí sedět v&nbsp;papírech od exportéra, kde se kontejner v&nbsp;přístavu nejčastěji zdrží a&nbsp;jak tomu předejít. To víme z&nbsp;kontejnerů, které jsme sami odbavili, a&nbsp;z&nbsp;osvědčené spolupráce s&nbsp;celními deklaranty, dopravci a&nbsp;lidmi v&nbsp;přístavu.',
     'w.h': 'Pro exportéry.<br>Pro jejich zákazníky.',
