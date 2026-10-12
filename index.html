@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="cs">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Casa Buena Automotive</title>
-<meta name="description" content="Odbavujeme auta z Číny, od přístavu po registraci: uvolnění kontejneru, doprava, vykládka, proclení v přístavu nebo kdekoli v EU, technické schválení. Pro jedno auto i celý kontejner.">
+<meta name="description" content="We take Chinese cars from port to plates: container release, transport, customs at the port or anywhere in the EU, homologation and registration. For exporters and their customers in Europe.">
 <meta name="theme-color" content="#0a0f14">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0f14'/%3E%3Crect x='7' y='7' width='18' height='18' fill='none' stroke='%23ffa630' stroke-width='3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -157,9 +157,9 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
 .who-bg { position: absolute; inset: -14% 0; z-index: -1; transform: translateY(calc((var(--p, .5) - .5) * 16%)); }
 .who-bg img { width: 100%; height: 100%; object-fit: cover; opacity: .5; filter: grayscale(.35); }
 .who-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, var(--night) 0%, rgba(10, 15, 20, .45) 30%, rgba(10, 15, 20, .6) 70%, var(--night) 100%); }
-.who-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: clamp(48px, 7vw, 88px); }
+.who-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: clamp(48px, 7vw, 88px); }
 .who-card { padding: clamp(24px, 3.2vw, 46px); border: 1px solid var(--line-2); background: rgba(14, 21, 28, .82); backdrop-filter: blur(10px); }
-.who-card h3 { margin-bottom: 18px; font-size: clamp(36px, 4vw, 58px); }
+.who-card h3 { margin-bottom: 18px; font-size: clamp(34px, 3.2vw, 46px); }
 .who-card p { margin: 0 0 26px; color: var(--mist); }
 .who-card ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
 .who-card li { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); font: 500 12px/1.4 var(--f-mono); letter-spacing: .03em; }
@@ -198,7 +198,7 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
 @media (max-width: 900px) {
   .nav { display: none; }
   .top-act { margin-left: auto; }
-  .sec-head, .j-intro, .firm-grid, .foot-in { grid-template-columns: minmax(0, 1fr); }
+  .sec-head, .j-intro, .who-grid, .firm-grid, .foot-in { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 860px) {
   .journey-stick { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; gap: 6px; padding: 62px var(--g) 18px; }
@@ -216,7 +216,6 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
   .step-side { grid-column: 2; padding-top: 28px; }
   .hero-points { grid-template-columns: minmax(0, 1fr); }
   .hero-title { font-size: 11vw; }
-  .who-grid { grid-template-columns: minmax(0, 1fr); }
   .reg-row { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 420px) {
@@ -230,19 +229,19 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
 </head>
 <body>
 <script>document.documentElement.classList.add('js')</script>
-<a class="skip" href="#main" data-i18n="skip">Přeskočit na obsah</a>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
 <header class="top">
   <a class="brand" href="#top" aria-label="Casa Buena Automotive"><span class="brand-word">CASA BUENA <span class="brand-sub">AUTOMOTIVE</span></span></a>
-  <nav class="nav" aria-label="Hlavní">
-    <a href="#cesta" data-i18n="nav.route">Cesta vozu</a>
-    <a href="#postup" data-i18n="nav.steps">Postup</a>
-    <a href="#pro-koho" data-i18n="nav.who">Pro koho</a>
-    <a href="#firma" data-i18n="nav.firm">Firma</a>
+  <nav class="nav" aria-label="Main">
+    <a href="#cesta" data-i18n="nav.route">The route</a>
+    <a href="#postup" data-i18n="nav.steps">How it works</a>
+    <a href="#pro-koho" data-i18n="nav.who">Who it’s for</a>
+    <a href="#firma" data-i18n="nav.firm">Company</a>
   </nav>
   <div class="top-act">
-    <button class="lang" type="button" aria-label="Switch to English">EN</button>
-    <a class="btn btn-sm" href="#kontakt" data-i18n="cta">Napište nám</a>
+    <button class="lang" type="button" aria-label="Přepnout do češtiny">CZ</button>
+    <a class="btn btn-sm" href="#kontakt" data-i18n="cta">Contact us</a>
   </div>
 </header>
 
@@ -253,20 +252,20 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
     </div>
     <div class="hero-inner">
       <h1 class="hero-title">
-        <span class="ln"><span data-i18n="h1a">Odbavujeme auta z&nbsp;Číny.</span></span>
-        <span class="ln"><span data-i18n="h1b">Od přístavu po&nbsp;registraci.</span></span>
+        <span class="ln"><span data-i18n="h1a">We take Chinese&nbsp;cars</span></span>
+        <span class="ln"><span data-i18n="h1b">from port to&nbsp;plates.</span></span>
       </h1>
       <div class="hero-row">
-        <p class="hero-sub" data-i18n="h.sub">Pro čínské exportéry aut a&nbsp;jejich zákazníky v&nbsp;Evropě. Jakmile loď s&nbsp;vaším autem vypluje z&nbsp;Číny, přebíráme to my: přístav, uvolnění kontejneru, doprava, vykládka, proclení, technické schválení i&nbsp;registrace.</p>
+        <p class="hero-sub" data-i18n="h.sub">For Chinese car exporters and their customers in Europe. Once the ship carrying your car leaves China, we take over: port, container release, transport, unloading, customs, homologation and registration.</p>
         <div class="hero-cta">
-          <a class="btn" href="#kontakt"><span data-i18n="h.cta1">Napište nám</span><span class="arr" aria-hidden="true">→</span></a>
-          <a class="btn btn-ghost" href="#postup" data-i18n="h.cta2">Jak to probíhá</a>
+          <a class="btn" href="#kontakt"><span data-i18n="h.cta1">Contact us</span><span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="#postup" data-i18n="h.cta2">How it works</a>
         </div>
       </div>
       <ul class="hero-points">
-        <li><b data-i18n="hp1">Clo kdekoli v&nbsp;EU</b><span data-i18n="hp1d">V&nbsp;přístavu, nebo v&nbsp;zemi, kterou si určíte.</span></li>
-        <li><b data-i18n="hp2">Auto po autu</b><span data-i18n="hp2d">Kontejner rozdělíme a&nbsp;každý vůz může jet jinam.</span></li>
-        <li><b data-i18n="hp3">Specialisté na auta z&nbsp;Číny</b><span data-i18n="hp3d">Víme, jaké papíry od exportéra chtít a&nbsp;kde se dovoz umí zaseknout.</span></li>
+        <li><b data-i18n="hp1">Customs anywhere in the EU</b><span data-i18n="hp1d">At the port, or in the country you choose.</span></li>
+        <li><b data-i18n="hp2">Car by car</b><span data-i18n="hp2d">We split the container and each car can go its own way.</span></li>
+        <li><b data-i18n="hp3">Chinese-car specialists</b><span data-i18n="hp3d">We know which papers to get from the exporter and where an import tends to get stuck.</span></li>
       </ul>
     </div>
   </section>
@@ -274,28 +273,28 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
   <section id="cesta" aria-labelledby="cesta-h">
     <div class="wrap j-intro">
       <div>
-        <h2 id="cesta-h" data-i18n="j.h">Z&nbsp;Číny<br>do Ostravy.</h2>
+        <h2 id="cesta-h" data-i18n="j.h">From China<br>to anywhere<br>in the EU.</h2>
       </div>
-      <p class="lede" data-i18n="j.lede">Exportér končí v&nbsp;čínském přístavu, my začínáme. Kolem Afriky přes 26&nbsp;tisíc kilometrů po moři do Bremerhavenu, pak po souši do Ostravy. Posuňte stránku a&nbsp;sledujte kontejner.</p>
+      <p class="lede" data-i18n="j.lede">The exporter’s job ends at the Chinese port, and ours begins. Around Africa, over 26,000 km by sea to Europe, then on to wherever each car needs to go. Scroll to follow the container.</p>
     </div>
     <div class="journey" data-scrub="stick">
       <div class="journey-stick">
         <div class="globe-box">
-          <canvas class="globe" role="img" aria-label="Zeměkoule s trasou vozu z Číny kolem Afriky do Bremerhavenu a po souši do Ostravy"></canvas>
+          <canvas class="globe" role="img" aria-label="Globe showing the route from China around Africa to Bremerhaven and on to anywhere in the EU"></canvas>
         </div>
         <div class="panel">
           <div class="readout">
-            <div><span class="lbl" data-i18n="j.day">Den</span><span class="val" id="j-day">45</span></div>
-            <div><span class="lbl">Km</span><span class="val" id="j-km">27 610</span></div>
+            <div><span class="lbl" data-i18n="j.day">Day</span><span class="val" id="j-day">45</span></div>
+            <div><span class="lbl">Km</span><span class="val" id="j-km">28,420</span></div>
           </div>
           <ol class="stages">
-            <li><b data-i18n="st0">Čína</b><span data-i18n="st0d">Exportér vůz naloží a&nbsp;loď vypluje. Tady přebíráme.</span></li>
-            <li><b data-i18n="st1">Jihočínské moře</b><span data-i18n="st1d">Loď míří na jih kolem Singapuru. Od exportéra sbíráme fakturu, balicí list a&nbsp;doklady k&nbsp;vozu.</span></li>
-            <li><b data-i18n="st2">Indický oceán</b><span data-i18n="st2d">Nejdelší úsek. Hlídáme konosament (B/L) a&nbsp;domlouváme přístav, dopravu i&nbsp;clo.</span></li>
-            <li><b data-i18n="st3">Mys Dobré naděje</b><span data-i18n="st3d">Trasu volí rejdař: kolem Afriky, nebo přes Suez.</span></li>
-            <li><b data-i18n="st4">Atlantik</b><span data-i18n="st4d">Na sever podél Afriky a&nbsp;Evropy. Před příjezdem máme papíry i&nbsp;dopravu připravené.</span></li>
-            <li><b data-i18n="st5">Bremerhaven</b><span data-i18n="st5d">Uvolníme kontejner u&nbsp;rejdaře a&nbsp;pod celním dohledem ho pošleme po souši do Česka.</span></li>
-            <li><b data-i18n="st6">Ostrava</b><span data-i18n="st6d">Vykládka z&nbsp;kontejneru, proclení, technické schválení a&nbsp;registrace. Pak předání.</span></li>
+            <li><b data-i18n="st0">China</b><span data-i18n="st0d">The exporter loads the car and the ship sails. This is where we take over.</span></li>
+            <li><b data-i18n="st1">South China Sea</b><span data-i18n="st1d">The ship heads south past Singapore. We collect the invoice, packing list and car documents from the exporter.</span></li>
+            <li><b data-i18n="st2">Indian Ocean</b><span data-i18n="st2d">The longest leg. We keep track of the bill of lading (B/L) and line up the port, transport and customs.</span></li>
+            <li><b data-i18n="st3">Cape of Good Hope</b><span data-i18n="st3d">The shipping line picks the route: around Africa or through Suez.</span></li>
+            <li><b data-i18n="st4">Atlantic</b><span data-i18n="st4d">North along Africa and Europe. Before arrival, the papers and transport are ready.</span></li>
+            <li><b data-i18n="st5">Bremerhaven</b><span data-i18n="st5d">We get the container released by the shipping line, then clear it here or send it on under customs supervision.</span></li>
+            <li><b data-i18n="st6">Anywhere in the EU</b><span data-i18n="st6d">Each car goes where you need it, gets approved and registered, and is handed over.</span></li>
           </ol>
           <div class="segs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
         </div>
@@ -303,14 +302,14 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
     </div>
   </section>
 
-  <section class="sea" data-scrub="stick" aria-label="Na moři">
+  <section class="sea" data-scrub="stick" aria-label="At sea">
     <div class="sea-stick">
       <div class="sea-frame" aria-hidden="true">
         <video src="assets/ship-sea.mp4" poster="assets/ship-sea.webp" muted loop playsinline preload="none" data-lazy></video>
       </div>
       <div class="sea-copy">
-        <p class="sea-big"><span data-i18n="sea.a">5–7 týdnů</span><span data-i18n="sea.b">na moři</span></p>
-        <p class="sea-note" data-i18n="sea.note">Kontejner sledujeme a&nbsp;mezitím chystáme papíry i&nbsp;příjezd.</p>
+        <p class="sea-big"><span data-i18n="sea.a">5–7 weeks</span><span data-i18n="sea.b">at sea</span></p>
+        <p class="sea-note" data-i18n="sea.note">We track the container and get the papers and arrival ready.</p>
       </div>
     </div>
   </section>
@@ -319,40 +318,40 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <h2 id="postup-h" data-i18n="s.h">Od vyplutí<br>po českou SPZ.</h2>
+          <h2 id="postup-h" data-i18n="s.h">Nine steps.<br>One contact.</h2>
         </div>
-        <p class="lede" data-i18n="s.lede">S&nbsp;exportérem jsme v&nbsp;kontaktu po celou dobu. Vy víte, kde vůz je a&nbsp;co se s&nbsp;ním právě děje.</p>
+        <p class="lede" data-i18n="s.lede">Book the whole way, or just the steps you need. We stay in touch with the exporter throughout, so you always know where the car is and what is happening to it.</p>
       </div>
       <ol class="path" data-scrub="line">
         <li class="step">
           <span class="step-num">01</span>
           <div class="step-body">
-            <h3 data-i18n="s1">Vyplutí z&nbsp;Číny</h3>
-            <p data-i18n="s1p">Exportér vůz naloží a&nbsp;loď vypluje. Tím jeho práce končí a&nbsp;naše začíná. Převezmeme od něj obchodní fakturu, balicí list a&nbsp;doklady k&nbsp;vozu a&nbsp;zkontrolujeme, že sedí.</p>
+            <h3 data-i18n="s1">Leaving China</h3>
+            <p data-i18n="s1p">The exporter loads the car and the ship sails. That is where the exporter’s job ends and ours begins. We collect the commercial invoice, packing list and car documents and check that they match.</p>
           </div>
         </li>
         <li class="step">
           <span class="step-num">02</span>
           <div class="step-body">
-            <h3 data-i18n="s2">Na moři</h3>
-            <p data-i18n="s2p">Během plavby rejdař vystaví konosament (B/L). Hlídáme, aby ho exportér včas uvolnil, doplňujeme, co chybí, a&nbsp;předem domlouváme přístav, dopravu i&nbsp;proclení.</p>
+            <h3 data-i18n="s2">At sea</h3>
+            <p data-i18n="s2p">During the voyage the shipping line issues the bill of lading (B/L). We make sure the exporter releases it in time, chase anything missing and book the port, transport and clearance in advance.</p>
           </div>
         </li>
         <li class="step">
           <span class="step-num">03</span>
           <div class="step-body">
-            <h3 data-i18n="s3">Přístav</h3>
-            <p data-i18n="s3p">V&nbsp;přístavu, obvykle v&nbsp;Bremerhavenu, jednáme s&nbsp;rejdařem a&nbsp;terminálem: příjezd, poplatky a&nbsp;uvolnění kontejneru. Bez uvolnění kontejner z&nbsp;přístavu neodjede.</p>
+            <h3 data-i18n="s3">The port</h3>
+            <p data-i18n="s3p">At the port, usually Bremerhaven, we deal with the shipping line and the terminal: arrival, charges and the container release. Without the release, the container cannot leave the port.</p>
           </div>
           <div class="step-side">
-            <figure class="step-media"><img src="assets/bhv-cranes-night.webp" alt="Kontejnerový terminál v noci, jeřáby nad kontejnery" loading="lazy" width="1800" height="958"></figure>
+            <figure class="step-media"><img src="assets/bhv-cranes-night.webp" alt="Container terminal at night, cranes above the containers" loading="lazy" width="1800" height="958"></figure>
           </div>
         </li>
         <li class="step">
           <span class="step-num">04</span>
           <div class="step-body">
-            <h3 data-i18n="s4">Po souši do Česka</h3>
-            <p data-i18n="s4p">Kontejner pokračuje po souši pod celním dohledem až do Česka. Clo a&nbsp;DPH se proto platí až tady.</p>
+            <h3 data-i18n="s4">Onward transport</h3>
+            <p data-i18n="s4p">Under customs supervision, the container can travel on to any EU country you choose. Duty and VAT are then paid where the cars are cleared.</p>
           </div>
           <div class="step-side">
             <figure class="step-media"><video src="assets/truck-road.mp4" poster="assets/truck-road.webp" muted loop playsinline preload="none" data-lazy aria-hidden="true"></video></figure>
@@ -361,39 +360,39 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
         <li class="step">
           <span class="step-num">05</span>
           <div class="step-body">
-            <h3 data-i18n="s5">Vykládka z&nbsp;kontejneru</h3>
-            <p data-i18n="s5p">Ještě před proclením vozy z&nbsp;kontejneru vyložíme a&nbsp;připravíme na clo.</p>
+            <h3 data-i18n="s5">Out of the container</h3>
+            <p data-i18n="s5p">Before clearance we unload the cars and get them ready for customs. This is where a container can be split, so each car can go its own way.</p>
           </div>
         </li>
         <li class="step">
           <span class="step-num">06</span>
           <div class="step-body">
-            <h3 data-i18n="s6">Proclení</h3>
-            <p data-i18n="s6p">Clo vyřídíme s&nbsp;osvědčeným celním deklarantem. Dovozcem obvykle zůstáváte vy, podklady připravíme my.</p>
+            <h3 data-i18n="s6">Customs</h3>
+            <p data-i18n="s6p">At the port or in the EU country you choose, with a customs broker we know and trust. You usually remain the importer; we prepare the paperwork.</p>
           </div>
         </li>
         <li class="step">
           <span class="step-num">07</span>
           <div class="step-body">
-            <h3 data-i18n="s7">Technické schválení</h3>
-            <p data-i18n="s7p">Doložíme technickou dokumentaci a&nbsp;necháme vůz schválit pro provoz v&nbsp;Česku.</p>
+            <h3 data-i18n="s7">Homologation</h3>
+            <p data-i18n="s7p">We supply the technical documentation and get the car approved in the country where it will be registered.</p>
           </div>
         </li>
         <li class="step">
           <span class="step-num">08</span>
           <div class="step-body">
-            <h3 data-i18n="s8">Čeština v&nbsp;autě</h3>
-            <p data-i18n="s8p">Na přání: kde to model dovolí, přepneme systém do češtiny nebo angličtiny a&nbsp;nastavíme evropské aplikace.</p>
+            <h3 data-i18n="s8">Localisation</h3>
+            <p data-i18n="s8p">On request: where the model allows it, we switch the system to English or another language and set up European apps.</p>
           </div>
           <div class="step-side">
-            <figure class="step-media"><img src="assets/voyah-interior.webp" alt="Interiér vozu Voyah Taishan s displeji" loading="lazy" width="1600" height="1200"></figure>
+            <figure class="step-media"><img src="assets/voyah-interior.webp" alt="Voyah Taishan interior with its screens" loading="lazy" width="1600" height="1200"></figure>
           </div>
         </li>
         <li class="step">
           <span class="step-num">09</span>
           <div class="step-body">
-            <h3 data-i18n="s9">Registrace a&nbsp;předání</h3>
-            <p data-i18n="s9p">Vůz zaregistrujeme a&nbsp;dostane českou SPZ. Pak ho předáme vám. Prodejcům předáme vozy připravené k&nbsp;registraci.</p>
+            <h3 data-i18n="s9">Registration and handover</h3>
+            <p data-i18n="s9p">We register the car in the EU country you choose and hand it over with plates. Dealers can take cars cleared and approved, ready to register.</p>
           </div>
         </li>
       </ol>
@@ -403,33 +402,42 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
   <section class="know" aria-labelledby="know-h">
     <div class="wrap sec-head">
       <div>
-        <h2 id="know-h" data-i18n="kn.h">Co se nikde<br>nedočtete.</h2>
+        <h2 id="know-h" data-i18n="kn.h">Not in<br>the manual.</h2>
       </div>
-      <p class="lede" data-i18n="kn.lede">Co musí sedět v&nbsp;papírech od exportéra, kde se kontejner v&nbsp;přístavu nejčastěji zdrží a&nbsp;jak tomu předejít. To víme z&nbsp;kontejnerů, které jsme sami odbavili, a&nbsp;z&nbsp;osvědčené spolupráce s&nbsp;celními deklaranty, dopravci a&nbsp;lidmi v&nbsp;přístavu.</p>
+      <p class="lede" data-i18n="kn.lede">What has to be right in the exporter’s papers, where a container most often gets held up in port, and how to avoid it. We know it from containers we have handled ourselves, and from proven work with customs brokers, hauliers and people at the port.</p>
     </div>
   </section>
 
   <section id="pro-koho" class="who" data-scrub="pass" aria-labelledby="who-h">
     <div class="who-bg" aria-hidden="true"><img src="assets/bhv-cars.webp" alt="" loading="lazy" width="1800" height="1250"></div>
     <div class="wrap">
-      <h2 id="who-h" data-i18n="w.h">Pro řidiče.<br>Pro prodejce.</h2>
+      <h2 id="who-h" data-i18n="w.h">For exporters.<br>For their customers.</h2>
       <div class="who-grid">
         <article class="who-card">
-          <h3 data-i18n="w1">Řidiči a&nbsp;firmy</h3>
-          <p data-i18n="w1p">Kupujete auto přímo v&nbsp;Číně? Evropskou stranu vyřídíme za vás, od vyplutí lodi po českou SPZ.</p>
+          <h3 data-i18n="w0">Exporters</h3>
+          <p data-i18n="w0p">Selling cars to European buyers? Send them to us. We take over when the ship sails and tell you exactly which papers we need from you.</p>
           <ul>
-            <li data-i18n="w1a">Papíry během plavby</li>
-            <li data-i18n="w1b">Přístav, clo a&nbsp;schválení</li>
-            <li data-i18n="w1c">Předání s&nbsp;českou SPZ</li>
+            <li data-i18n="w0a">One partner for the whole EU side</li>
+            <li data-i18n="w0b">A clear list of the papers we need</li>
+            <li data-i18n="w0c">Your buyers kept up to date</li>
           </ul>
         </article>
         <article class="who-card">
-          <h3 data-i18n="w2">Prodejci</h3>
-          <p data-i18n="w2p">Vozíte z&nbsp;Číny víc aut nebo celé kontejnery? Převezmeme je od vyplutí a&nbsp;předáme proclené a&nbsp;technicky schválené, připravené k&nbsp;registraci a&nbsp;prodeji.</p>
+          <h3 data-i18n="w2">Dealers</h3>
+          <p data-i18n="w2p">Bringing in several cars or whole containers? We hand them over cleared and approved, ready to register and sell.</p>
           <ul>
-            <li data-i18n="w2a">Celé kontejnery</li>
-            <li data-i18n="w2b">Proclené a&nbsp;schválené vozy</li>
-            <li data-i18n="w2c">Připravené k&nbsp;registraci</li>
+            <li data-i18n="w2a">Whole containers, split if needed</li>
+            <li data-i18n="w2b">Cleared and approved cars</li>
+            <li data-i18n="w2c">Ready for registration</li>
+          </ul>
+        </article>
+        <article class="who-card">
+          <h3 data-i18n="w1">Direct buyers</h3>
+          <p data-i18n="w1p">Buying a car directly from China? We handle the European side for you, from the moment the ship sails to plates in your country.</p>
+          <ul>
+            <li data-i18n="w1a">Paperwork during the voyage</li>
+            <li data-i18n="w1b">Port, customs and approval</li>
+            <li data-i18n="w1c">Handover with plates</li>
           </ul>
         </article>
       </div>
@@ -439,22 +447,22 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
   <section id="firma" class="firm" aria-labelledby="firma-h">
     <div class="wrap firm-grid">
       <div>
-        <h2 id="firma-h" data-i18n="f.h">Česká firma<br>z&nbsp;Ostravy.</h2>
-        <p class="lede" data-i18n="f.lede">Kontejnery z&nbsp;Číny odbavujeme z&nbsp;Ostravy a&nbsp;celou evropskou stranu máme v&nbsp;jedné ruce. Všechny údaje si ověříte ve veřejných rejstřících.</p>
+        <h2 id="firma-h" data-i18n="f.h">Look us up.</h2>
+        <p class="lede" data-i18n="f.lede">Casa Buena s.r.o. is a Czech company and VAT payer, with the whole European side of your import in one pair of hands. You can check every detail in the public registers.</p>
         <div class="reg-links">
-          <a class="btn btn-ghost btn-sm" href="https://or.justice.cz/ias/ui/rejstrik-$firma?ico=23325151" target="_blank" rel="noopener" data-i18n="f.or">Obchodní rejstřík ↗</a>
+          <a class="btn btn-ghost btn-sm" href="https://or.justice.cz/ias/ui/rejstrik-$firma?ico=23325151" target="_blank" rel="noopener" data-i18n="f.or">Commercial register ↗</a>
           <a class="btn btn-ghost btn-sm" href="https://ares.gov.cz/ekonomicke-subjekty?ico=23325151" target="_blank" rel="noopener">ARES ↗</a>
         </div>
       </div>
       <dl class="reg">
-        <div class="reg-head"><span data-i18n="r.head">Údaje o&nbsp;firmě</span></div>
-        <div class="reg-row"><dt data-i18n="r.name">Obchodní firma</dt><dd>Casa Buena s.r.o.</dd></div>
-        <div class="reg-row"><dt data-i18n="r.ico">IČO</dt><dd>23325151</dd></div>
-        <div class="reg-row"><dt data-i18n="r.dic">DIČ</dt><dd data-i18n="r.dicv">CZ23325151, plátce DPH</dd></div>
-        <div class="reg-row"><dt data-i18n="r.seat">Sídlo</dt><dd>Partyzánské náměstí 1738/3, 702&nbsp;00 Ostrava</dd></div>
-        <div class="reg-row"><dt data-i18n="r.zap">Zápis</dt><dd data-i18n="r.zapv">Krajský soud v&nbsp;Ostravě, oddíl C, vložka 99494</dd></div>
-        <div class="reg-row"><dt data-i18n="r.jed">Jednatel</dt><dd>Jan Struhala</dd></div>
-        <div class="reg-row"><dt data-i18n="r.ds">Datová schránka</dt><dd>cdxerfc</dd></div>
+        <div class="reg-head"><span data-i18n="r.head">Company details</span></div>
+        <div class="reg-row"><dt data-i18n="r.name">Company name</dt><dd>Casa Buena s.r.o.</dd></div>
+        <div class="reg-row"><dt data-i18n="r.ico">Company ID</dt><dd>23325151</dd></div>
+        <div class="reg-row"><dt data-i18n="r.dic">VAT ID</dt><dd data-i18n="r.dicv">CZ23325151, VAT payer</dd></div>
+        <div class="reg-row"><dt data-i18n="r.seat">Registered office</dt><dd>Partyzánské náměstí 1738/3, 702&nbsp;00 Ostrava</dd></div>
+        <div class="reg-row"><dt data-i18n="r.zap">Registration</dt><dd data-i18n="r.zapv">Regional Court in Ostrava, section C, file 99494</dd></div>
+        <div class="reg-row"><dt data-i18n="r.jed">Managing director</dt><dd>Jan Struhala</dd></div>
+        <div class="reg-row"><dt data-i18n="r.ds">Data box</dt><dd>cdxerfc</dd></div>
       </dl>
     </div>
   </section>
@@ -462,13 +470,13 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
   <section id="kontakt" class="contact" aria-labelledby="kontakt-h">
     <div class="contact-bg" aria-hidden="true"><img src="assets/bhv-ship.webp" alt="" loading="lazy" width="1800" height="1249"></div>
     <div class="wrap">
-      <h2 id="kontakt-h" data-i18n="k.h">Co vám jede<br>z&nbsp;Číny?</h2>
-      <p class="lede" data-i18n="k.lede">VIN, přístav, termín vyplutí a&nbsp;doklady, které už máte. Ozveme se s&nbsp;nabídkou.</p>
+      <h2 id="kontakt-h" data-i18n="k.h">What’s coming<br>from China?</h2>
+      <p class="lede" data-i18n="k.lede">VIN, port, sailing date and any documents you already have. We’ll come back with an offer.</p>
       <div class="mail">
         <span class="mail-addr">jan@casabuena.cz</span>
         <div class="mail-act">
-          <button class="btn copy" type="button">Kopírovat</button>
-          <a class="btn btn-ghost" href="mailto:jan@casabuena.cz" data-i18n="k.mail">Napsat e-mail ↗</a>
+          <button class="btn copy" type="button">Copy</button>
+          <a class="btn btn-ghost" href="mailto:jan@casabuena.cz" data-i18n="k.mail">Write an email ↗</a>
         </div>
       </div>
     </div>
@@ -481,7 +489,7 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
       <span class="brand-word">CASA BUENA <span class="brand-sub">AUTOMOTIVE</span></span>
       <p>© 2026 Casa Buena s.r.o. · IČO 23325151</p>
     </div>
-    <p data-i18n="ft">Fotografie: Bremerhaven od Bundesanstalt für Wasserbau (<a href="https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592739647).jpg">1</a>, <a href="https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592444761).jpg">2</a>; <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, oříznuto) a&nbsp;<a href="https://commons.wikimedia.org/wiki/File:CT3_bremerhaven_hg.jpg">Hannes Grobe</a> (<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>), Wikimedia Commons.</p>
+    <p data-i18n="ft">Photos: Bremerhaven by Bundesanstalt für Wasserbau (<a href="https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592739647).jpg">1</a>, <a href="https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592444761).jpg">2</a>; <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, cropped) and <a href="https://commons.wikimedia.org/wiki/File:CT3_bremerhaven_hg.jpg">Hannes Grobe</a> (<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>), Wikimedia Commons.</p>
   </div>
 </footer>
 
@@ -502,7 +510,6 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
   const SEA = [[122.05, 30.62, 0], [123, 29], [120.5, 25.8], [118.8, 23.4, 1], [116, 21.4], [112, 16], [109.5, 10], [106.5, 4], [104.4, 1.2], [103.85, 1.15],
     [101.4, 2.3], [100, 3.6], [98, 5.3], [95.5, 6.2, 2], [85, 0], [70, -12], [55, -27], [45, -30.5], [32, -35, 3], [19.5, -35.8], [14, -31], [8, -20, 4],
     [-20.5, 15], [-20.5, 25], [-15, 36], [-11, 43], [-6, 48.7], [-2, 49.9], [0.5, 50.2], [1.6, 51], [3.5, 52], [6, 53.8], [7.8, 54], [8.55, 53.55, 5]];
-  const LAND = [[8.55, 53.55], [8.8, 53.08], [9.73, 52.37], [12.37, 51.34], [13.74, 51.05], [14.42, 50.08], [16.61, 49.2], [18.29, 49.83, 6]];
   const SUEZ = [[95.5, 6.2], [80.6, 5.5], [58, 14], [51.5, 12.6], [43.4, 12.6], [38.5, 20], [34, 27.5], [32.55, 29.9], [32.3, 31.3], [25, 34], [12.2, 37],
     [0, 36.6], [-5.6, 35.95], [-9.8, 37], [-11, 43]];
   const PORTS = [
@@ -511,7 +518,13 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
     { lon: 18.47, lat: -34.36, cs: 'MYS DOBRÉ NADĚJE', en: 'CAPE OF GOOD HOPE', al: 'left' },
     { lon: 32.55, lat: 29.97, cs: 'SUEZ', en: 'SUEZ', al: 'left', alt: true },
     { lon: 8.58, lat: 53.55, cs: 'BREMERHAVEN', en: 'BREMERHAVEN', al: 'right' },
-    { lon: 18.29, lat: 49.83, cs: 'OSTRAVA', en: 'OSTRAVA', al: 'left' },
+    // From the port each car can go its own way: one leg per destination.
+    { lon: 2.35, lat: 48.86, cs: 'PAŘÍŽ', en: 'PARIS', al: 'right', dest: true },
+    { lon: -3.7, lat: 40.42, cs: 'MADRID', en: 'MADRID', al: 'right', dest: true },
+    { lon: 9.19, lat: 45.46, cs: 'MILÁN', en: 'MILAN', al: 'left', dest: true },
+    { lon: 14.42, lat: 50.08, cs: 'PRAHA', en: 'PRAGUE', al: 'left', dest: true },
+    { lon: 21.01, lat: 52.23, cs: 'VARŠAVA', en: 'WARSAW', al: 'left', dest: true },
+    { lon: 12.57, lat: 55.68, cs: 'KODAŇ', en: 'COPENHAGEN', al: 'left', dest: true },
   ];
 
   const vec = (lon, lat) => [Math.cos(lat * D) * Math.cos(lon * D), Math.cos(lat * D) * Math.sin(lon * D), Math.sin(lat * D)];
@@ -533,11 +546,13 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
     }
     return { pts, km, marks };
   }
-  const sea = densify(SEA, 0, 1), land = densify(LAND, sea.km, .25), alt = densify(SUEZ, 0, 1);
-  const ROUTE = sea.pts.concat(land.pts.slice(1)), SEA_KM = sea.km, TOTAL = land.km, LAND_KM = TOTAL - SEA_KM;
-  const MARKS = sea.marks.slice();
-  land.marks.forEach((k, i) => { MARKS[i] = k; });
-  for (const p of PORTS) if (!p.alt) {
+  const sea = densify(SEA, 0, 1), alt = densify(SUEZ, 0, 1);
+  const ROUTE = sea.pts, SEA_KM = sea.km, MARKS = sea.marks, LEGS = [];
+  for (const p of PORTS) if (p.dest) { const leg = densify([[8.55, 53.55], [p.lon, p.lat]], SEA_KM, .25); p.km = leg.km; LEGS.push(leg); }
+  // The km readout follows the longest leg; the last caption comes up a third of the way out.
+  const TOTAL = Math.max(...LEGS.map(l => l.km)), LAND_KM = TOTAL - SEA_KM;
+  MARKS[6] = SEA_KM + LAND_KM / 3;
+  for (const p of PORTS) if (!p.alt && !p.dest) {
     let best = Infinity;
     for (const q of ROUTE) { const d = (q.lon - p.lon) ** 2 + (q.lat - p.lat) ** 2; if (d < best) { best = d; p.km = q.km; } }
   }
@@ -549,7 +564,7 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
     const a = pts[lo], b = pts[hi], t = (km - a.km) / (b.km - a.km);
     return { lon: a.lon + (b.lon - a.lon) * t, lat: a.lat + (b.lat - a.lat) * t, km };
   }
-  // Scroll progress -> km. Each sea stage gets an equal share of the scroll, then a pause in Bremerhaven, the land leg, and a pause in Ostrava.
+  // Scroll progress -> km. Each sea stage gets an equal share of the scroll, then a pause in Bremerhaven, the legs across the EU, and a pause at the end.
   function kmAt(p) {
     if (p < .04) return 0;
     if (p < .8) { const u = (p - .04) / .76 * 5, i = Math.min(4, u | 0); return MARKS[i] + (MARKS[i + 1] - MARKS[i]) * (u - i); }
@@ -568,7 +583,7 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
   const canvas = $('.globe'), ctx = canvas.getContext('2d');
   const stageEls = $$('.stages li'), segEls = $$('.segs i'), dayEl = $('#j-day'), kmEl = $('#j-km');
   let W = 0, H = 0, cx = 0, cy = 0, R = 1, lon0 = 0, sin0 = 0, cos0 = 1;
-  let pT = 0, pD = 0, loop = 0, inView = false, stage = -1, lang = 'cs';
+  let pT = 0, pD = 0, loop = 0, inView = false, stage = -1, lang = 'en';
 
   function cam(lon, lat, r) { lon0 = lon * D; sin0 = Math.sin(lat * D); cos0 = Math.cos(lat * D); R = r; }
   // Orthographic projection: [x, y, depth]; depth > 0 is the visible hemisphere.
@@ -594,7 +609,8 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
     const p = pD, km = rm ? TOTAL : kmAt(p), h = at(ROUTE, km), zoom = rm ? 0 : smooth(.8, .92, p);
     const base = Math.min(W, H) * .44;
     if (rm) cam(52, 12, base);
-    else cam(h.lon, (h.lat * .6 + 8) * (1 - zoom) + h.lat * zoom, base * (1 + 1.8 * zoom));
+    // Zoomed in, the view sits south of the port to frame the legs.
+    else cam(h.lon, (h.lat * .6 + 8) * (1 - zoom) + (h.lat - 5) * zoom, base * (1 + 1.8 * zoom));
 
     ctx.clearRect(0, 0, W, H);
     let g = ctx.createRadialGradient(cx, cy, R * .9, cx, cy, R * 1.32);
@@ -619,20 +635,24 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
     ctx.lineCap = 'round'; ctx.lineJoin = 'round';
     ctx.setLineDash([2, 6]);
     ctx.lineWidth = 1.3; ctx.strokeStyle = 'rgba(170, 190, 207, .4)'; trace(alt.pts, 0, alt.km);
-    ctx.lineWidth = 1.6; ctx.strokeStyle = 'rgba(255, 166, 48, .5)'; trace(ROUTE, km, TOTAL);
+    ctx.lineWidth = 1.6; ctx.strokeStyle = 'rgba(255, 166, 48, .5)';
+    if (km < SEA_KM) trace(ROUTE, km, SEA_KM);
+    for (const l of LEGS) if (km < l.km) trace(l.pts, km, l.km);
     ctx.setLineDash([]);
     if (km > 0) {
       ctx.lineWidth = 2.6; ctx.strokeStyle = '#ffa630'; ctx.shadowColor = 'rgba(255, 166, 48, .85)'; ctx.shadowBlur = 12;
       trace(ROUTE, 0, km);
+      if (km > SEA_KM) for (const l of LEGS) trace(l.pts, SEA_KM, km);
       ctx.shadowBlur = 0;
     }
 
     ctx.font = '500 10.5px "Martian Mono", ui-monospace, monospace'; ctx.textBaseline = 'middle';
     for (const pt of PORTS) {
       const [x, y, z] = proj(pt.lon, pt.lat);
-      if (z < .12) continue;
+      if (z < .12 || (pt.dest && !zoom)) continue;
       const hit = !pt.alt && km >= pt.km - 1;
-      ctx.globalAlpha = Math.min(1, (z - .12) * 5);
+      // Destinations show up as the camera closes in on Europe.
+      ctx.globalAlpha = Math.min(1, (z - .12) * 5) * (pt.dest ? zoom : 1);
       ctx.beginPath(); ctx.arc(x, y, 3.6, 0, Math.PI * 2);
       ctx.fillStyle = hit ? '#ffa630' : '#0a0f14'; ctx.fill();
       ctx.lineWidth = 1.2; ctx.strokeStyle = hit ? '#ffa630' : 'rgba(223, 229, 234, .75)'; ctx.stroke();
@@ -711,57 +731,59 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
 
   /* ---------- Language ---------- */
   const UI = {
-    cs: { copy: 'Kopírovat', copied: 'Zkopírováno', selected: 'Označeno, zkopírujte', other: 'EN', aria: 'Switch to English', globe: 'Zeměkoule s trasou vozu z Číny kolem Afriky do Bremerhavenu a po souši do Ostravy' },
-    en: { copy: 'Copy', copied: 'Copied', selected: 'Selected, copy it', other: 'CZ', aria: 'Přepnout do češtiny', globe: 'Globe showing the route from China around Africa to Bremerhaven and overland to Ostrava' },
+    cs: { copy: 'Kopírovat', copied: 'Zkopírováno', selected: 'Označeno, zkopírujte', other: 'EN', aria: 'Switch to English', globe: 'Zeměkoule s trasou vozu z Číny kolem Afriky do Bremerhavenu a odtud kamkoli v EU' },
+    en: { copy: 'Copy', copied: 'Copied', selected: 'Selected, copy it', other: 'CZ', aria: 'Přepnout do češtiny', globe: 'Globe showing the route from China around Africa to Bremerhaven and on to anywhere in the EU' },
   };
-  const EN = {
-    skip: 'Skip to content', 'nav.route': 'The route', 'nav.steps': 'How it works', 'nav.who': 'Who it’s for', 'nav.firm': 'Company', cta: 'Contact us',
-    h1a: 'We take Chinese&nbsp;cars', h1b: 'from port to&nbsp;plates.',
-    'h.sub': 'For Chinese car exporters and their customers in Europe. Once the ship carrying your car leaves China, we take over: port, container release, transport, unloading, customs, homologation and registration.',
-    'h.cta1': 'Contact us', 'h.cta2': 'How it works',
-    hp1: 'Customs anywhere in the EU', hp1d: 'At the port, or in the country you choose.',
-    hp2: 'Car by car', hp2d: 'We split the container and each car can go its own way.',
-    hp3: 'Chinese-car specialists', hp3d: 'We know which papers to get from the exporter and where an import tends to get stuck.',
-    'j.h': 'From China<br>to Ostrava.',
-    'j.lede': 'The exporter’s job ends at the Chinese port, and ours begins. Around Africa, over 26,000 km by sea to Bremerhaven, then overland to Ostrava. Scroll to follow the container.',
-    'j.day': 'Day',
-    st0: 'China', st0d: 'The exporter loads the car and the ship sails. This is where we take over.',
-    st1: 'South China Sea', st1d: 'The ship heads south past Singapore. We collect the invoice, packing list and car documents from the exporter.',
-    st2: 'Indian Ocean', st2d: 'The longest leg. We keep track of the bill of lading (B/L) and line up the port, transport and customs.',
-    st3: 'Cape of Good Hope', st3d: 'The shipping line picks the route: around Africa or through Suez.',
-    st4: 'Atlantic', st4d: 'North along Africa and Europe. Before arrival, the papers and transport are ready.',
-    st5: 'Bremerhaven', st5d: 'We get the container released by the shipping line and send it overland to Czechia under customs supervision.',
-    st6: 'Ostrava', st6d: 'Unloading, customs clearance, technical approval and registration. Then handover.',
-    'sea.a': '5–7 weeks', 'sea.b': 'at sea', 'sea.note': 'We track the container and get the papers and arrival ready.',
-    's.h': 'From departure<br>to Czech plates.', 's.lede': 'We stay in touch with the exporter the whole way. You know where the car is and what is happening to it.',
-    s1: 'Leaving China', s1p: 'The exporter loads the car and the ship sails. That is where the exporter’s job ends and ours begins. We collect the commercial invoice, packing list and car documents and check that they match.',
-    s2: 'At sea', s2p: 'During the voyage the shipping line issues the bill of lading (B/L). We make sure the exporter releases it in time, chase anything missing and book the port, transport and clearance in advance.',
-    s3: 'The port', s3p: 'At the port, usually Bremerhaven, we deal with the shipping line and the terminal: arrival, charges and the container release. Without the release, the container cannot leave the port.',
-    s4: 'Overland to Czechia', s4p: 'The container continues overland under customs supervision all the way to Czechia, so duty and VAT are paid here.',
-    s5: 'Out of the container', s5p: 'Before customs clearance we unload the cars from the container and get them ready for customs.',
-    s6: 'Customs', s6p: 'We handle customs with a broker we know and trust. You usually remain the importer; we prepare the paperwork.',
-    s7: 'Technical approval', s7p: 'We supply the technical documentation and get the car approved for Czech roads.',
-    s8: 'Localisation', s8p: 'On request: where the model allows it, we switch the system to Czech or English and set up European apps.',
-    s9: 'Registration and handover', s9p: 'We register the car and it gets Czech plates. Then we hand it over to you. Dealers receive cars ready for registration.',
-    'kn.h': 'Not in<br>the manual.',
-    'kn.lede': 'What has to be right in the exporter’s papers, where a container most often gets held up in port, and how to avoid it. We know it from containers we have handled ourselves, and from proven work with customs brokers, hauliers and people at the port.',
-    'w.h': 'For drivers.<br>For dealers.',
-    w1: 'Drivers and companies', w1p: 'Buying a car directly in China? We handle the European side for you, from the moment the ship sails to Czech plates.',
-    w1a: 'Paperwork during the voyage', w1b: 'Port, customs and approval', w1c: 'Handover with Czech plates',
-    w2: 'Dealers', w2p: 'Bringing in several cars or whole containers from China? We take over from departure and hand them over cleared and approved, ready to register and sell.',
-    w2a: 'Whole containers', w2b: 'Cleared and approved cars', w2c: 'Ready for registration',
-    'f.h': 'A Czech company<br>from Ostrava.', 'f.lede': 'We handle containers from China out of Ostrava, with the whole European side in one pair of hands. You can check every detail in the public registers.',
-    'f.or': 'Commercial register ↗', 'r.head': 'Company details', 'r.name': 'Company name', 'r.ico': 'Company ID', 'r.dic': 'VAT ID', 'r.dicv': 'CZ23325151, VAT payer',
-    'r.seat': 'Registered office', 'r.zap': 'Registration', 'r.zapv': 'Regional Court in Ostrava, section C, file 99494', 'r.jed': 'Managing director', 'r.ds': 'Data box',
-    'k.h': 'What’s coming<br>from China?', 'k.lede': 'VIN, port, sailing date and any documents you already have. We’ll come back with an offer.', 'k.mail': 'Write an email ↗',
-    ft: 'Photos: Bremerhaven by Bundesanstalt für Wasserbau (<a href="https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592739647).jpg">1</a>, <a href="https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592444761).jpg">2</a>; <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, cropped) and <a href="https://commons.wikimedia.org/wiki/File:CT3_bremerhaven_hg.jpg">Hannes Grobe</a> (<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>), Wikimedia Commons.',
+  const CS = {
+    skip: 'Přeskočit na obsah', 'nav.route': 'Cesta vozu', 'nav.steps': 'Postup', 'nav.who': 'Pro koho', 'nav.firm': 'Firma', cta: 'Napište nám',
+    h1a: 'Odbavujeme auta z&nbsp;Číny.', h1b: 'Od přístavu po&nbsp;registraci.',
+    'h.sub': 'Pro čínské exportéry aut a&nbsp;jejich zákazníky v&nbsp;Evropě. Jakmile loď s&nbsp;vaším autem vypluje z&nbsp;Číny, přebíráme to my: přístav, uvolnění kontejneru, doprava, vykládka, proclení, technické schválení i&nbsp;registrace.',
+    'h.cta1': 'Napište nám', 'h.cta2': 'Jak to probíhá',
+    hp1: 'Clo kdekoli v&nbsp;EU', hp1d: 'V&nbsp;přístavu, nebo v&nbsp;zemi, kterou si určíte.',
+    hp2: 'Auto po autu', hp2d: 'Kontejner rozdělíme a&nbsp;každý vůz může jet jinam.',
+    hp3: 'Specialisté na auta z&nbsp;Číny', hp3d: 'Víme, jaké papíry od exportéra chtít a&nbsp;kde se dovoz umí zaseknout.',
+    'j.h': 'Z&nbsp;Číny<br>kamkoli v&nbsp;EU.',
+    'j.lede': 'Exportér končí v&nbsp;čínském přístavu, my začínáme. Kolem Afriky přes 26&nbsp;tisíc kilometrů po moři do Evropy a&nbsp;pak dál, kam který vůz potřebuje. Posuňte stránku a&nbsp;sledujte kontejner.',
+    'j.day': 'Den',
+    st0: 'Čína', st0d: 'Exportér vůz naloží a&nbsp;loď vypluje. Tady přebíráme.',
+    st1: 'Jihočínské moře', st1d: 'Loď míří na jih kolem Singapuru. Od exportéra sbíráme fakturu, balicí list a&nbsp;doklady k&nbsp;vozu.',
+    st2: 'Indický oceán', st2d: 'Nejdelší úsek. Hlídáme konosament (B/L) a&nbsp;domlouváme přístav, dopravu i&nbsp;clo.',
+    st3: 'Mys Dobré naděje', st3d: 'Trasu volí rejdař: kolem Afriky, nebo přes Suez.',
+    st4: 'Atlantik', st4d: 'Na sever podél Afriky a&nbsp;Evropy. Před příjezdem máme papíry i&nbsp;dopravu připravené.',
+    st5: 'Bremerhaven', st5d: 'Uvolníme kontejner u&nbsp;rejdaře a&nbsp;proclíme ho tady, nebo ho pod celním dohledem pošleme dál.',
+    st6: 'Kamkoli v&nbsp;EU', st6d: 'Každý vůz jede, kam potřebujete. Tam ho schválíme, zaregistrujeme a&nbsp;předáme.',
+    'sea.a': '5–7 týdnů', 'sea.b': 'na moři', 'sea.note': 'Kontejner sledujeme a&nbsp;mezitím chystáme papíry i&nbsp;příjezd.',
+    's.h': 'Devět kroků.<br>Jeden kontakt.', 's.lede': 'Objednejte si celou cestu, nebo jen kroky, které potřebujete. S&nbsp;exportérem jsme v&nbsp;kontaktu po celou dobu, takže víte, kde vůz je a&nbsp;co se s&nbsp;ním právě děje.',
+    s1: 'Vyplutí z&nbsp;Číny', s1p: 'Exportér vůz naloží a&nbsp;loď vypluje. Tím jeho práce končí a&nbsp;naše začíná. Převezmeme od něj obchodní fakturu, balicí list a&nbsp;doklady k&nbsp;vozu a&nbsp;zkontrolujeme, že sedí.',
+    s2: 'Na moři', s2p: 'Během plavby rejdař vystaví konosament (B/L). Hlídáme, aby ho exportér včas uvolnil, doplňujeme, co chybí, a&nbsp;předem domlouváme přístav, dopravu i&nbsp;proclení.',
+    s3: 'Přístav', s3p: 'V&nbsp;přístavu, obvykle v&nbsp;Bremerhavenu, jednáme s&nbsp;rejdařem a&nbsp;terminálem: příjezd, poplatky a&nbsp;uvolnění kontejneru. Bez uvolnění kontejner z&nbsp;přístavu neodjede.',
+    s4: 'Doprava dál', s4p: 'Pod celním dohledem může kontejner pokračovat do kterékoli země EU, kterou určíte. Clo a&nbsp;DPH se pak platí tam, kde se vozy proclí.',
+    s5: 'Vykládka z&nbsp;kontejneru', s5p: 'Před proclením vozy z&nbsp;kontejneru vyložíme a&nbsp;připravíme na clo. Tady se dá kontejner rozdělit, takže každý vůz může jet jinam.',
+    s6: 'Proclení', s6p: 'V&nbsp;přístavu, nebo v&nbsp;zemi EU, kterou si určíte, s&nbsp;osvědčeným celním deklarantem. Dovozcem obvykle zůstáváte vy, podklady připravíme my.',
+    s7: 'Technické schválení', s7p: 'Doložíme technickou dokumentaci a&nbsp;necháme vůz schválit v&nbsp;zemi, kde bude registrovaný.',
+    s8: 'Jazyk a&nbsp;aplikace', s8p: 'Na přání: kde to model dovolí, přepneme systém do češtiny, angličtiny nebo jiného jazyka a&nbsp;nastavíme evropské aplikace.',
+    s9: 'Registrace a&nbsp;předání', s9p: 'Vůz zaregistrujeme v&nbsp;zemi EU, kterou si určíte, a&nbsp;předáme vám ho s&nbsp;registrační značkou. Prodejcům předáme vozy proclené a&nbsp;schválené, připravené k&nbsp;registraci.',
+    'kn.h': 'Co se nikde<br>nedočtete.',
+    'kn.lede': 'Co musí sedět v&nbsp;papírech od exportéra, kde se kontejner v&nbsp;přístavu nejčastěji zdrží a&nbsp;jak tomu předejít. To víme z&nbsp;kontejnerů, které jsme sami odbavili, a&nbsp;z&nbsp;osvědčené spolupráce s&nbsp;celními deklaranty, dopravci a&nbsp;lidmi v&nbsp;přístavu.',
+    'w.h': 'Pro exportéry.<br>Pro jejich zákazníky.',
+    w0: 'Exportéři', w0p: 'Prodáváte auta zákazníkům v&nbsp;Evropě? Pošlete je k&nbsp;nám. Převezmeme to, jakmile loď vypluje, a&nbsp;řekneme vám přesně, jaké papíry od vás potřebujeme.',
+    w0a: 'Jeden partner pro celou EU', w0b: 'Jasný seznam potřebných papírů', w0c: 'Zákazníci vědí, co se děje',
+    w1: 'Řidiči a&nbsp;firmy', w1p: 'Kupujete auto přímo v&nbsp;Číně? Evropskou stranu vyřídíme za vás, od vyplutí lodi po registrační značku ve vaší zemi.',
+    w1a: 'Papíry během plavby', w1b: 'Přístav, clo a&nbsp;schválení', w1c: 'Předání s&nbsp;registrační značkou',
+    w2: 'Prodejci', w2p: 'Vozíte z&nbsp;Číny víc aut nebo celé kontejnery? Předáme je proclené a&nbsp;technicky schválené, připravené k&nbsp;registraci a&nbsp;prodeji.',
+    w2a: 'Celé kontejnery, i&nbsp;rozdělené', w2b: 'Proclené a&nbsp;schválené vozy', w2c: 'Připravené k&nbsp;registraci',
+    'f.h': 'Prověřte si nás.', 'f.lede': 'Casa Buena s.r.o. je česká firma a&nbsp;plátce DPH. Celou evropskou stranu dovozu máte u&nbsp;nás v&nbsp;jedné ruce. Všechny údaje si ověříte ve veřejných rejstřících.',
+    'f.or': 'Obchodní rejstřík ↗', 'r.head': 'Údaje o&nbsp;firmě', 'r.name': 'Obchodní firma', 'r.ico': 'IČO', 'r.dic': 'DIČ', 'r.dicv': 'CZ23325151, plátce DPH',
+    'r.seat': 'Sídlo', 'r.zap': 'Zápis', 'r.zapv': 'Krajský soud v&nbsp;Ostravě, oddíl C, vložka 99494', 'r.jed': 'Jednatel', 'r.ds': 'Datová schránka',
+    'k.h': 'Co vám jede<br>z&nbsp;Číny?', 'k.lede': 'VIN, přístav, termín vyplutí a&nbsp;doklady, které už máte. Ozveme se s&nbsp;nabídkou.', 'k.mail': 'Napsat e-mail ↗',
+    ft: 'Fotografie: Bremerhaven od Bundesanstalt für Wasserbau (<a href="https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592739647).jpg">1</a>, <a href="https://commons.wikimedia.org/wiki/File:Containerterminal_Bremerhaven_Weser_(49592444761).jpg">2</a>; <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, oříznuto) a&nbsp;<a href="https://commons.wikimedia.org/wiki/File:CT3_bremerhaven_hg.jpg">Hannes Grobe</a> (<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>), Wikimedia Commons.',
   };
-  const nodes = $$('[data-i18n]'), CS = {};
-  nodes.forEach(n => { CS[n.dataset.i18n] ??= n.innerHTML; });
+  const nodes = $$('[data-i18n]'), EN = {};
+  nodes.forEach(n => { EN[n.dataset.i18n] ??= n.innerHTML; });
   const langBtn = $('.lang'), copyBtn = $('.copy'), mail = $('.mail-addr');
   function setLang(l) {
     lang = l;
-    nodes.forEach(n => { const v = (l === 'en' ? EN : CS)[n.dataset.i18n]; if (v != null) n.innerHTML = v; });
+    nodes.forEach(n => { const v = (l === 'cs' ? CS : EN)[n.dataset.i18n]; if (v != null) n.innerHTML = v; });
     root.lang = l;
     langBtn.textContent = UI[l].other;
     langBtn.setAttribute('aria-label', UI[l].aria);
@@ -785,7 +807,7 @@ h2 { font-size: clamp(46px, 8vw, 132px); }
 
   let saved = null;
   try { saved = localStorage.getItem('cb-lang'); } catch {}
-  if (saved === 'en') setLang('en');
+  if (saved === 'cs') setLang('cs');
   new ResizeObserver(size).observe(canvas);
   if (document.fonts) document.fonts.ready.then(() => draw());
   measure();
